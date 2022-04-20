@@ -1,0 +1,8 @@
+# .gitignore file
+
+*.toml
+*.config
+
+/node_modules
+
+*.json
