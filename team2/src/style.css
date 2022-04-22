@@ -27,7 +27,7 @@
 }
 
 .split > * {
-    flex-basis: 49%;
+    flex-basis: 48%;
 }
 
 .card {
@@ -39,6 +39,12 @@
 
 .text-center {
     text-align: center;
+}
+
+@media (max-width: 810px) {
+    .split > * {
+        flex-basis: 100%;
+    }
 }
 
 /*
@@ -75,28 +81,79 @@ nav .container {
 
 #logo {
     font-size: 1.5rem;
+    z-index: 99;
 }
 
-nav ul {
+.nav-list {
     display: flex;
-    height: 100%;
 }
 
-nav li {
+.nav-item {
     margin-left: .75rem;
     list-style-type: none;
-    height: 100%;
+    
     font-size: 1.25rem;
 }
 
 nav a {
     color: var(--color-main);
     text-decoration: none;
-    
 }
 
 nav a:hover {
     color: var(--bg-color-accent);
+}
+
+#mobile-menu {
+    display: none;
+    z-index: 9;
+}
+
+@media (max-width: 810px) {
+    .nav-list {
+        position: fixed;
+        left: 0;
+        top: -100%;
+        background: var(--bg-color-main);
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        transition: .3s;
+        z-index: 2;
+    }
+
+    .nav-item {
+        padding: 1rem;
+    }
+
+    .nav-list.active {
+        top: 3.75rem;
+    }
+
+    #mobile-menu {
+        display: block;
+        cursor: pointer;
+    }
+    
+    #mobile-menu span {
+        display: block;
+        background: #fff;
+        margin: 5px auto;
+        height: 3px;
+        width: 25px;
+        transition: all 0.3s ease-in-out
+    }
+
+    #mobile-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 /*
@@ -107,6 +164,11 @@ main {
     margin-top: 4rem;
 }
 
+#modal-btn {
+    margin-left: .5rem;
+    padding: .1rem .25rem;
+}
+
 .welcome-space {
     display: flex;
     justify-content: center;
@@ -115,6 +177,19 @@ main {
 
 main ul {
     list-style-type: none;
+}
+
+/*
+    Modal
+*/
+
+dialog {
+    margin: auto;
+    width: 80%;
+}
+.modal-content {
+    margin: 0 auto;
+    background: pink;
 }
 
 /*

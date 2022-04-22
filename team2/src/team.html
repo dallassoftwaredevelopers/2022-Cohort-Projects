@@ -15,11 +15,17 @@
         <nav>
             <nav class="container">
                 <h2 id="logo">Team 2B</h2>
-                <ul>
-                    <li>
+
+                <div id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
                         <a href="../index.html">Home</a>
                     </li>
-                    <li>
+                    <li class="nav-item">
                         <a href="./team.html">Team</a>
                     </li>
                 </ul>
@@ -27,11 +33,20 @@
         </nav>
     </header>
 
+    <!--Main-->
     <main>
         <div class="container">
             <div class="welcome-space">
                 <h3 class="text-center">Hello Team</h3>
-                <button>Click</button>
+                <!--Modal-->
+                <button id="modal-btn">Click</button>
+                <dialog id="meeting-modal">
+                    <form method="dialog">
+                        <section id="modal-content">
+
+                        </section>
+                    </form>
+                </dialog>
             </div>
             
             <h2 class="text-center">Our Project Ideas</h2>
@@ -52,7 +67,7 @@
             
         </div>
     </main>
-
+    <!--Footer-->
     <footer>
         <div class="container">
             <p>
