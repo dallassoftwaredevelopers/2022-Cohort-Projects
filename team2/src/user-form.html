@@ -5,18 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="">
 </head>
 <body>
+    <header>
+        <!--Nav-->
+        <nav>
+            <nav class="container">
+                
+                <h2 id="logo">Team 2B</h1>
+                    <div class="jarLogo" >
+                        <img src="https://i.ibb.co/H4jKnBL/jar.png" alt="jar">
+                        <h2>Idea Jar</h2>
+                    </div>
+                    <div id="mobile-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./src/team.html">Team 2B</a>
+                    </li>
+                </ul>
+            </nav>
+        </nav>
+    </header>
     <main>
         <div class="container">
-            <form action="" method="post">
-                Category:
+
+            <!--User submission form-->
+            <form onsubmit="setData(event)" action="" method="">
+                <label for="event-name">Event name:</label>
+                <br>
+                <input type="text" name="event-name" id="event-name">
+                <br>
+
+                <label for="event-url">Event URL:</label>
+                <br>
+                <input type="text" name="event-url" id="event-url">
+                <br>
+
+                <label for="event-date">Date:</label>
+                <br>
+                <input type="date" name="event-date" id="event-date">
+                <br>
+
+                <label for="category">Category:</label>
                 <br>
                 <input type="radio" id="park" name="category" value="Park">
                 <label for="category">Park</label>
                 <input type="radio" id="park" name="category" value="Resturant">
                 <label for="category">Park</label>
                 
+                <input type="radio" id="any" name="category" value="any">
+                <label for="any">Any</label>
+
+                <input type="radio" id="stay-home" name="category" value="stay-home">
+                <label for="stay-home">Stay Home</label>
+                
+                <input type="radio" id="resturant" name="category" value="resturant">
+                <label for="resturant">Park</label>
+                
+                <input type="radio" id="road-trip" name="category" value="road-trip">
+                <label for="road-trip">Road Trip</label>
+                
+                <input type="radio" id="indoors" name="category" value="indoors">
+                <label for="indoors">Indoors</label>
+                
+                <input type="radio" id="outdoors" name="category" value="outdoors">
+                <label for="outdoors">Outdoors</label>
+
+                <br>
+                <input type="submit" value="Submit" id="submit">
             </form>
         </div>
     </main>
