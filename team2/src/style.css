@@ -159,7 +159,7 @@ footer p + p {
 }
 
 
-@media all and (max-width: 615px) {
+@media all and (max-width: 810px) {
     footer .container {
         flex-direction: column;
         gap: 15px;
