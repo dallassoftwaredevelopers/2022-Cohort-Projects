@@ -11,6 +11,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* font-family: 'Martel Sans', sans-serif; */
     font-family: sans-serif;
 }
 
@@ -133,7 +134,7 @@ footer {
 footer .container {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
 .media-tray {
@@ -149,4 +150,23 @@ footer i {
 footer i:hover {
     color: var(--icon-color-hover);
     transform: translateY(-3px);
+}
+
+footer p + p {
+    font-size: 1.3rem;
+}
+.names {
+    line-height: 1.5;
+}
+
+
+@media all and (max-width: 615px) {
+    footer .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    footer p + p {
+        order: -1;
+    }
 }
