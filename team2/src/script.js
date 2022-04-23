@@ -15,4 +15,5 @@ modalOpenBtn.addEventListener('click', () => {
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active')
     navMenu.classList.toggle('active')
+    console.log("hi")
 })
