@@ -12,8 +12,20 @@
     --tag-blue: #00BBF9;
     --tag-TURQUOISE: #00F5D4;
     --tag-ORANGE:#ff9505;
-
 }
+
+/*-----------------------------------  
+    Table of Contents
+    -> General
+    -> Typography
+    Pages: 
+    -> index.html
+    -> add-idea.html
+    -> get-idea.html
+    -> Nav
+    -> Footer
+----------------------------------*/
+
 body {
     background: var(--background-color);
 }
@@ -39,15 +51,19 @@ body {
     flex-basis: 100%;
 }
 
+main {
+    margin-top: 4rem;
+}
+
 @media (max-width: 810px) {
     .split > * {
         flex-basis: 100%;
     }
 }
 
-/*
+/*---------------------
     Typography
-*/
+---------------------*/
 
 h1 {
 
@@ -60,11 +76,139 @@ h2 {
 p {
 
 }
+/*----------------------
+    index.html 
+ 
+-----------------------*/
 
+
+
+/*---------------------
+    get-item.html
+
+---------------------*/
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+}
+
+#modal-btn {
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.25rem;
+}
+
+img {
+    max-width: 75%;
+    margin-left: 10rem;
+}
+
+main ul {
+    list-style-type: none;
+}
+
+  /* Labels */
+#any {
+    background-color: var(--orange);
+}
+
+#home {
+    background-color: var(--blue);
+}
+
+#restaurant {
+    background-color: var(--bright-yellow);
+}
+
+#indoor {
+    background-color: var(--pink);
+}
+
+#outdoor {
+    background-color: var(--header-footer-color);
+}
+
+#trip {
+    background-color: var(--turquoise);
+}
+  
 /*
-    Nav
+    Buttons
 */
+.shake {
+    padding: 3rem 3rem;
+    margin: 3rem;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
 
+/*-------------
+    add-item.html
+-------------*/
+
+.card {
+    background: var(--color-main);
+    border: 1px solid rgb(88, 88, 88);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Radio input css */
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+.category-options {
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+    text-align: center;
+    width: 120px;
+}
+
+.category-options:hover {opacity: .6;}
+
+.any {background: var(--tag-ORANGE);}
+
+.stay-home {background: var(--tag-blue);}
+
+.resturant {background: var(--tag-yellow);}
+
+.road-trip {background: var(--tag-TURQUOISE);}
+
+.indoors {background: var(--tag-pink);}
+
+.outdoors {background: var(--tag-purple);}
+/* END OF Radio input css */
+
+.form-btn {
+    padding: .5rem 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/*---------------------
+    Nav
+---------------------*/
 nav {
     background: var(--header-footer-color);
 }
@@ -81,6 +225,7 @@ nav .container {
     font-size: 1.5rem;
     z-index: 99;
 }
+
 .jarLogo {
     display: flex;
     align-items: center;
@@ -98,7 +243,6 @@ nav .container {
 .nav-item {
     margin-left: .75rem;
     list-style-type: none;
-    
     font-size: 1.25rem;
 }
 
@@ -163,143 +307,9 @@ nav a:hover {
     }
 }
 
-/*----------------------
-    Index.html 
-    
-    Main
-    .card
-        ->form
-            ->label
-            ->input
------------------------*/
-
-main {
-    margin-top: 4rem;
-}
-
-#modal-btn {
-    margin-left: .5rem;
-    padding: .1rem .25rem;
-}
-
-.card {
-    background: var(--color-main);
-    border: 1px solid rgb(88, 88, 88);
-    padding: 1rem;
-    border-radius: 10px;
-    width: 700px;
-}
-
-.card-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-/**/
-
-.wrapper {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-  }
-  
-  #modal-btn {
-    margin-left: 0.5rem;
-    padding: 0.1rem 0.25rem;
-  }
-  
-  img {
-    max-width: 75%;
-    margin-left: 10rem;
-  }
-  
-  main ul {
-    list-style-type: none;
-  }
-  
-  /*
-      Buttons
-  */
-  .shake {
-    padding: 3rem 3rem;
-    margin: 3rem;
-    font-size: 2rem;
-    color: white;
-    text-align: center;
-    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
-  }
-  
-  #any {
-    background-color: var(--orange);
-  }
-  
-  #home {
-    background-color: var(--blue);
-  }
-  
-  #restaurant {
-    background-color: var(--bright-yellow);
-  }
-  
-  #indoor {
-    background-color: var(--pink);
-  }
-  
-  #outdoor {
-    background-color: var(--header-footer-color);
-  }
-  
-  #trip {
-    background-color: var(--turquoise);
-  }
-
-/* Radio input css */
-input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-.category-options {
-    border: 2px solid #000;
-    border-radius: 10px;
-    display: inline-block;
-    padding: .5rem 1rem;
-    margin: .5rem 0;
-    text-align: center;
-    width: 120px;
-}
-
-.category-options:hover {opacity: .6;}
-
-.any {background: var(--tag-ORANGE);}
-
-.stay-home {background: var(--tag-blue);}
-
-.resturant {background: var(--tag-yellow);}
-
-.road-trip {background: var(--tag-TURQUOISE);}
-
-.indoors {background: var(--tag-pink);}
-
-.outdoors {background: var(--tag-purple);}
-/* END OF Radio input css */
-
-.form-btn {
-    padding: .5rem 1rem;
-    border: 1px solid black;
-    border-radius: 10px;
-    margin-top: 1rem;
-}
-
-/*
+/*---------------
     Footer
-*/
-
+---------------*/
 footer {
     position: absolute;
     top: 97%;
@@ -342,7 +352,6 @@ footer p + p {
 .names {
     line-height: 1.5;
 }
-
 
 @media all and (max-width: 810px) {
     footer .container {
