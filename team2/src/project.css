@@ -164,8 +164,9 @@ nav a:hover {
 }
 
 /*----------------------
+    Index.html 
+    
     Main
-
     .card
         ->form
             ->label
@@ -195,6 +196,64 @@ main {
     justify-content: space-between;
     align-items: flex-start;
 }
+
+/**/
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+  }
+  
+  #modal-btn {
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.25rem;
+  }
+  
+  img {
+    max-width: 75%;
+    margin-left: 10rem;
+  }
+  
+  main ul {
+    list-style-type: none;
+  }
+  
+  /*
+      Buttons
+  */
+  .shake {
+    padding: 3rem 3rem;
+    margin: 3rem;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+  }
+  
+  #any {
+    background-color: var(--orange);
+  }
+  
+  #home {
+    background-color: var(--blue);
+  }
+  
+  #restaurant {
+    background-color: var(--bright-yellow);
+  }
+  
+  #indoor {
+    background-color: var(--pink);
+  }
+  
+  #outdoor {
+    background-color: var(--header-footer-color);
+  }
+  
+  #trip {
+    background-color: var(--turquoise);
+  }
 
 /* Radio input css */
 input[type="radio"] {
