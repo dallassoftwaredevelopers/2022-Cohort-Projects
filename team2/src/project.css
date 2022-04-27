@@ -174,10 +174,12 @@ p {
 
 ---------------------*/
 
-.wrapper {
+.gridcontainer {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
+    justify-content: space-around;
+    
 }
 
 #modal-btn {
@@ -223,8 +225,8 @@ main ul {
     Buttons
 */
 .shake {
-    padding: 3rem 3rem;
-    margin: 3rem;
+    padding: 2rem 3rem;
+    /* margin: 3rem; */
     font-size: 2rem;
     color: white;
     text-align: center;
