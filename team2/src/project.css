@@ -77,7 +77,8 @@ h2 {
 }
 
 p {
-
+    color: var(--header-footer-color);
+    font-size: 2rem;
 }
 /*----------------------
     index.html 
@@ -173,10 +174,12 @@ p {
 
 ---------------------*/
 
-.wrapper {
+.gridcontainer {
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
+    justify-content: space-around;
+    
 }
 
 #modal-btn {
@@ -222,12 +225,16 @@ main ul {
     Buttons
 */
 .shake {
-    padding: 3rem 3rem;
-    margin: 3rem;
+    padding: 2rem 3rem;
+    /* margin: 3rem; */
     font-size: 2rem;
     color: white;
     text-align: center;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    width: 300px;
+    min-width: 250px;
+    height: 100px;
+    border-radius: 10px;
 }
 
 /*-------------
