@@ -5,6 +5,7 @@
     --font-color-accent: rgb(170, 68, 111);
     --icon-color: rgb(83, 163, 209);
     --icon-color-hover: #fff;
+    --bg-color-green: rgb(78, 196, 78);
 }
 
 * {
@@ -35,37 +36,97 @@
     border-radius: 10px;
     padding: 1rem;
     line-height: 1.5rem;
+    transition: all .2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.selected {
+    background: var(--bg-color-green);
 }
 
 .text-center {
     text-align: center;
 }
 
+/*
+    Main
+*/
+
+main {
+    margin-top: 4rem;
+}
+
+#modal-btn {
+    margin-left: .5rem;
+    padding: .1rem .25rem;
+}
+
+.welcome-space {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+main ul {
+    list-style-type: none;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+}
+
+/*
+    Dialog / Modal
+*/
+dialog {
+    margin: auto;
+    padding: 3rem;
+    width: 80%;
+}
+
+.modal .split > * {
+    flex-basis: 31%;
+}
+
+.modal h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.modal li {
+    margin: .75rem 0;
+}
+
+#modal-btn {
+    margin-left: .5rem;
+}
+
+dialog {
+    margin: auto;
+    width: 80%;
+}
+
+#modal-content {
+    margin: 0 auto;
+}
+
+
+/*
+    Mobile settings
+*/
 @media (max-width: 810px) {
     .split > * {
         flex-basis: 100%;
     }
 }
 
-/*
-    Typography
-*/
-
-h1 {
-
-}
-
-h2 {
-
-}
-
-p {
-
-}
-
-/*
+/*--------------
     Nav
-*/
+--------------*/
 
 nav {
     background: var(--bg-color-main);
@@ -154,42 +215,6 @@ nav a:hover {
     #mobile-menu.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-}
-
-/*
-    Main
-*/
-
-main {
-    margin-top: 4rem;
-}
-
-#modal-btn {
-    margin-left: .5rem;
-    padding: .1rem .25rem;
-}
-
-.welcome-space {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-main ul {
-    list-style-type: none;
-}
-
-/*
-    Modal
-*/
-
-dialog {
-    margin: auto;
-    width: 80%;
-}
-.modal-content {
-    margin: 0 auto;
-    background: pink;
 }
 
 /*
