@@ -66,7 +66,10 @@ main {
 ---------------------*/
 
 h1 {
-
+    color: var(--header-footer-color);
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
 
 h2 {
@@ -192,19 +195,19 @@ main ul {
 
   /* Labels */
 #any {
-    background-color: var(--orange);
+    background-color: var(--tag-ORANGE);
 }
 
 #home {
-    background-color: var(--blue);
+    background-color: var(--tag-blue);
 }
 
 #restaurant {
-    background-color: var(--bright-yellow);
+    background-color: var(--tag-yellow);
 }
 
 #indoor {
-    background-color: var(--pink);
+    background-color: var(--tag-pink);
 }
 
 #outdoor {
@@ -212,7 +215,7 @@ main ul {
 }
 
 #trip {
-    background-color: var(--turquoise);
+    background-color: var(--tag-TURQUOISE);
 }
   
 /*
