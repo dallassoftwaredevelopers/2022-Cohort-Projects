@@ -1,3 +1,3 @@
 const hello = () => {
-  console.log("this is just a test file");
+  console.log("this is just a file");
 };
