@@ -77,7 +77,8 @@ h2 {
 }
 
 p {
-
+    color: var(--header-footer-color);
+    font-size: 2rem;
 }
 /*----------------------
     index.html 
@@ -228,6 +229,10 @@ main ul {
     color: white;
     text-align: center;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    width: 300px;
+    min-width: 250px;
+    height: 100px;
+    border-radius: 10px;
 }
 
 /*-------------
