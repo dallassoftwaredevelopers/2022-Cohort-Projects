@@ -1,11 +1,16 @@
+// Isolated code
+function startGetIdea() {
+    $(document).click(function() {
+        $( "#jar" ).effect( "shake", {direction: "up", times: 4, distance: 10}, 1000 );
+      });
+}
+
+/* Mobile menu
+
+*/
 const mobileMenu = document.getElementById('mobile-menu')
 const navMenu = document.querySelector('.nav-list')
 
-$(document).click(function() {
-    $( "#jar" ).effect( "shake", {direction: "up", times: 4, distance: 10}, 1000 );
-  });
-
-// Mobil menu
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active')
     navMenu.classList.toggle('active')
@@ -15,10 +20,14 @@ mobileMenu.addEventListener('click', () => {
 /* User form
     - Validate form data before storing
     - Store form data in userData.ideas[] 
-    - Clear form data after submit
 */
 
 let userData = []
+
+function displayIdeas() {
+    let ideaDisplay = document.querySelector('.user-ideas')
+    ideaDisplay.textContent = '\n' + JSON.stringify(userData, '\t', 2)
+}
 
 function addIdea(event) {
     event.preventDefault() // Stops form reload on submit
@@ -26,11 +35,12 @@ function addIdea(event) {
     // Get radio input
     let checkedRadio = ''
     let radioElements = document.getElementsByName('category')
-    console.log(radioElements)
 
     for(let i =0 ; i< radioElements.length; i++) {
         if(radioElements[i].checked) {
             // incomplete
+            console.log(radioElements[i].value)
+            checkedRadio = radioElements[i].value
         }
     }
 
@@ -39,11 +49,9 @@ function addIdea(event) {
         name: document.getElementById('event-name').value,
         URL: document.getElementById('event-url').value,
         date: document.getElementById('event-date').value,
-        category: ""
+        category: checkedRadio
     }
     userData.ideas.push(idea)
-
-    console.log("Added idea",userData)
 
     document.querySelector('form').reset()
 
@@ -51,8 +59,9 @@ function addIdea(event) {
     localStorage.setItem('myIdeaList', JSON.stringify( userData))
 }
 
-// Runs once when page is loaded
-document.addEventListener('DOMContentLoaded', () => {
+// Runs once when add-idea page is loaded
+function startAddIdea() {
+    console.log("loaded")
     // Import user data if previously submitted
     userData = JSON.parse(localStorage.getItem('myIdeaList'))
 
@@ -64,7 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     console.log(userData)
+
+    // Populate data on page if present
+    displayIdeas()
     
     // Call function addIdea on form-btn click
     document.querySelector('.form-btn').addEventListener('click', addIdea)
-})
+}

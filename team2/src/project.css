@@ -231,7 +231,6 @@ h2 {
     get-item.html
 
 ---------------------*/
-
 .containerGet {
     display: flex;
     gap: 7rem;
@@ -315,9 +314,16 @@ main ul {
 
 }
 
-/*-------------
+/*---------------------
     add-item.html
--------------*/
+    
+    #add-item
+    -> .idea-form
+        -> img
+        -> form
+    -> .idea-container
+        -> user-ideas
+----------------------*/
 form {
     display: flex;
     flex-direction: column;
@@ -364,6 +370,11 @@ input[type="radio"] {
     width: 0;
   }
 
+input[type="radio"]:checked+label {
+    background: rgb(116, 116, 116);
+    color: var(--icon-color);
+}
+
 .category-options {
     border: 2px solid #000;
     border-radius: 10px;
@@ -393,6 +404,12 @@ input[type="radio"] {
     padding: .5rem 1rem;
     border: 1px solid black;
     border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.idea-container {
+    display: flex;
+    flex-direction: column;
     margin-top: 1rem;
 }
 
