@@ -234,9 +234,16 @@ h2 {
 
 .containerGet {
     display: flex;
-    gap: 7rem;
+    gap: 3rem;
     justify-content: center;
     margin: 4rem 0;
+}
+.containerGet div {
+    text-align: center;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .activity-buttons {
@@ -245,6 +252,8 @@ h2 {
     gap: 10px;
     justify-content: space-around;
     align-content: space-around;
+    width: 50%;
+    min-width: 410px;
 }
 
 #modal-btn {
@@ -253,8 +262,8 @@ h2 {
 }
 
 #jar {
-    width: 40%;
-    height: 100%;
+    width: 60%;
+    min-width: 220px;
 }
 
 main ul {
@@ -304,6 +313,7 @@ main ul {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 @media all and (max-width: 810px) {
