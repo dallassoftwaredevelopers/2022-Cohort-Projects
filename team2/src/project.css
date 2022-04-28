@@ -25,10 +25,11 @@
     -> Nav
     -> Footer
 ----------------------------------*/
-
 body {
     background: var(--background-color);
 }
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -76,10 +77,6 @@ h2 {
 
 }
 
-p {
-    color: var(--header-footer-color);
-    font-size: 2rem;
-}
 /*----------------------
     index.html 
  
@@ -147,11 +144,13 @@ p {
     height: 100px;
 }
 
-.putIdeaBtnMain {
+.putIdeaBtnMain, 
+.putIdeaExplain {
     background: var(--tag-blue);
 }
 
-.getIdeaBtnMain {
+.getIdeaBtnMain, 
+.takeIdeaExplain {
     background: var(--tag-pink);
 }
 
@@ -161,11 +160,54 @@ p {
     transform: translateY(-3px);
 }
 
+.putIdeaExplain, 
+.takeIdeaExplain {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 175px;
+    min-width: 150px;
+    height: 70px;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.containerOverview {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    font-size: 1.3rem;
+
+}
+
+.containerExplain {
+    display: flex;
+    gap: 4rem;
+    margin: 2rem 0 4rem 0;
+}
+
+.containerExplain > section {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 @media (max-width: 810px) {
     .btnContainerMain {
         flex-direction: column;
         align-items: center;
+    }
+
+    .containerExplain {
+        flex-direction: column;
     }
 }
 
@@ -174,12 +216,19 @@ p {
 
 ---------------------*/
 
-.gridcontainer {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
+.containerGet {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 4rem 0;
+}
+
+.activity-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-around;
-    
+    align-content: space-around;
 }
 
 #modal-btn {
@@ -188,8 +237,8 @@ p {
 }
 
 .jar {
-    max-width: 75%;
-    margin-left: 10rem;
+    width: 40%;
+    height: 100%;
 }
 
 main ul {
@@ -229,12 +278,25 @@ main ul {
     /* margin: 3rem; */
     font-size: 2rem;
     color: white;
-    text-align: center;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
-    width: 300px;
-    min-width: 250px;
+    /* width: 300px; */
+    min-width: 200px;
     height: 100px;
     border-radius: 10px;
+
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media all and (max-width: 810px) {
+    .containerGet {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+
 }
 
 /*-------------
@@ -418,10 +480,11 @@ footer {
     width: 100%;
 }
 
-footer .container {
+.containerFooter {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 3rem;
 }
 
 footer a {
@@ -453,7 +516,7 @@ footer p + p {
 }
 
 @media all and (max-width: 810px) {
-    footer .container {
+    .containerFooter {
         flex-direction: column;
         gap: 15px;
         text-align: center;
