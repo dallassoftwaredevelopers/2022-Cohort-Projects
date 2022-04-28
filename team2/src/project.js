@@ -13,6 +13,9 @@ mobileMenu.addEventListener('click', () => {
     - Store form data in userData.ideas[] 
     - Clear form data after submit
 */
+
+let userData = []
+
 function addIdea(event) {
     event.preventDefault() // Stops form reload on submit
 
@@ -46,12 +49,17 @@ function addIdea(event) {
 
 // Runs once when page is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // TODO: Import user data if previously submitted
-    userData = {
-        userId: 1,
-        userName: 'Default',
-        ideas: []
+    // Import user data if previously submitted
+    userData = JSON.parse(localStorage.getItem('myIdeaList'))
+
+    if(!userData) {
+        userData = {
+            userId: 1,
+            userName: 'Default',
+            ideas: []
+        }
     }
+    console.log(userData)
     
     // Call function addIdea on form-btn click
     document.querySelector('.form-btn').addEventListener('click', addIdea)

@@ -61,7 +61,18 @@ main {
     margin: 4rem 0;
 }
 
+img {
+    max-width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
 @media (max-width: 810px) {
+    .split {
+        flex-direction: column;
+    }
     .split > * {
         flex-basis: 100%;
     }
@@ -307,6 +318,25 @@ main ul {
 /*-------------
     add-item.html
 -------------*/
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-item img {
+    height: 440px;
+}
+
+#add-item .card {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+} 
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
 
 .card {
     background: var(--color-main);
@@ -315,6 +345,7 @@ main ul {
     border-radius: 10px;
     display: flex;
     justify-content: flex-start;
+    align-self: flex-start;
 }
 
 .card-col {
@@ -376,7 +407,7 @@ nav .container {
     color: var(--color-main);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 1.25rem 0;
     font-size: 1.25rem;
@@ -435,13 +466,12 @@ nav a:hover {
     }
 
     .nav-list.active {
-        top: 5.4rem;
+        top: 4.25rem;
     }
 
     #mobile-menu {
         display: block;
         cursor: pointer;
-        width: 25%;
     }
     
     #mobile-menu span {
@@ -515,6 +545,9 @@ footer p + p {
 }
 
 @media all and (max-width: 810px) {
+    footer {
+        position: static;
+    }
     .containerFooter {
         flex-direction: column;
         gap: 15px;

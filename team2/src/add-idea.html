@@ -14,7 +14,6 @@
         <!--Nav-->
         <nav>
             <div class="container">
-                <h2 id="logo">Team 2B</h2>
                 <img id="nav-logo" src="./img/logo.png" alt="Idea jar logo">
                 <div id="mobile-menu">
                     <span></span>
@@ -36,64 +35,71 @@
         </nav>
     </header>
 
-    <main>
+    <main id="add-item">
         <div class="container">
+            <div class="split">
+                <div class="card">
+                    <!--User submission form-->
+                    <form>
+                        
+                        <div class="split">
+                            <div class="">
+                                <h3>
+                                    <label for="event-name">Event name:</label>
+                                </h3>
+                                
+                                <input type="text" name="event-name" id="event-name">
+                                
+                                <h3>
+                                    <label for="event-url">Event URL:</label>
+                                </h3>
+                                
+                                <input type="text" name="event-url" id="event-url">
+                                <br>
             
-            <div class="card">
-                <!--User submission form-->
-                <form>
-                    <div class="split">
-                        <div class="">
-                            <h3>
-                                <label for="event-name">Event name:</label>
-                            </h3>
-                            
-                            <input type="text" name="event-name" id="event-name">
-                            
-                            <h3>
-                                <label for="event-url">Event URL:</label>
-                            </h3>
-                            
-                            <input type="text" name="event-url" id="event-url">
-                            <br>
-        
-                            <h3>
-                                <label for="event-date">Date:</label>
-                            </h3>
-                            
-                            <input type="date" name="event-date" id="event-date">
-                            
+                                <h3>
+                                    <label for="event-date">Date:</label>
+                                </h3>
+                                
+                                <input type="date" name="event-date" id="event-date">
+                                
+                            </div>
+    
+                            <div>
+                                <h3>
+                                    <label for="category">Category:</label>
+                                </h3>
+                                
+                                <input type="radio" id="any" name="category" value="any">
+                                <label class="any category-options" for="any">Any</label>
+            
+                                <input type="radio" id="stay-home" name="category" value="stay-home">
+                                <label class="stay-home category-options" for="stay-home">Stay Home</label>
+                                
+                                <input type="radio" id="resturant" name="category" value="resturant">
+                                <label class="resturant category-options" for="resturant">Park</label>
+                                
+                                <input type="radio" id="road-trip" name="category" value="road-trip">
+                                <label class="road-trip category-options" for="road-trip">Road Trip</label>
+                                
+                                <input type="radio" id="indoors" name="category" value="indoors">
+                                <label class="indoors category-options" for="indoors">Indoors</label>
+                                
+                                <input type="radio" id="outdoors" name="category" value="outdoors">
+                                <label class="outdoors category-options" for="outdoors">Outdoors</label>
+            
+                            </div>
                         </div>
+                        <button class="form-btn">Submit</button>
+                    </form>
+                </div>
 
-                        <div>
-                            <h3>
-                                <label for="category">Category:</label>
-                            </h3>
-                            
-                            <input type="radio" id="any" name="category" value="any">
-                            <label class="any category-options" for="any">Any</label>
-        
-                            <input type="radio" id="stay-home" name="category" value="stay-home">
-                            <label class="stay-home category-options" for="stay-home">Stay Home</label>
-                            
-                            <input type="radio" id="resturant" name="category" value="resturant">
-                            <label class="resturant category-options" for="resturant">Park</label>
-                            
-                            <input type="radio" id="road-trip" name="category" value="road-trip">
-                            <label class="road-trip category-options" for="road-trip">Road Trip</label>
-                            
-                            <input type="radio" id="indoors" name="category" value="indoors">
-                            <label class="indoors category-options" for="indoors">Indoors</label>
-                            
-                            <input type="radio" id="outdoors" name="category" value="outdoors">
-                            <label class="outdoors category-options" for="outdoors">Outdoors</label>
-        
-                        </div>
-                    </div>
-                    <button class="form-btn">Submit</button>
-                </form>
+                <div class="img-container">
+                    <img src="./img/jar.png" alt="Idea jar">
+                </div>
             </div>
-
+            
+            <h2 class="text-center">Your current ideas:</h2>
             
         </div>
     </main>
