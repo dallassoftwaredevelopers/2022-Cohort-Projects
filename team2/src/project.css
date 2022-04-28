@@ -25,8 +25,13 @@
     -> Nav
     -> Footer
 ----------------------------------*/
+html {
+    
+}
+
 body {
     background: var(--background-color);
+    
 }
 
 
@@ -53,7 +58,7 @@ body {
 }
 
 main {
-    margin-top: 4rem;
+    margin: 4rem 0;
 }
 
 @media (max-width: 810px) {
@@ -367,33 +372,22 @@ nav {
     background: var(--header-footer-color);
 }
 
-.containerNav {
-    display: flex;
-    align-items: center;
+nav .container {
     color: var(--color-main);
-    padding: 1rem 0;
-}
-
-#logo {
-    font-size: 1.5rem;
-    z-index: 99;
-}
-
-#logo, .containerNav ul {
-    width: 25%;
-    text-align: center;
-}
-
-.jarLogo {
     display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    font-size: 1.25rem;
+    position: relative;
 }
 
-.jarLogo img {
-    width: 3.5rem;
-    max-height: 71px;
+#nav-logo {
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .nav-list {
@@ -403,16 +397,18 @@ nav {
 .nav-item {
     margin-left: .75rem;
     list-style-type: none;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 nav a {
     color: var(--color-main);
     text-decoration: none;
+    padding: .2rem;
 }
 
 nav a:hover {
     color: var(--bg-color-accent);
+    border-bottom: 2px solid var(--bg-color-accent);
 }
 
 #mobile-menu {
@@ -472,12 +468,13 @@ nav a:hover {
     Footer
 ---------------*/
 footer {
-    position: absolute;
-    top: 97%;
     padding: 1rem 0;
     background: var(--header-footer-color);
     color: #fff;
     width: 100%;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
 }
 
 .containerFooter {
@@ -513,6 +510,8 @@ footer p + p {
 }
 .names {
     line-height: 1.5;
+    font-size: 1rem;
+    color: var(--icon-color);
 }
 
 @media all and (max-width: 810px) {
