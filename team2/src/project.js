@@ -1,6 +1,10 @@
 const mobileMenu = document.getElementById('mobile-menu')
 const navMenu = document.querySelector('.nav-list')
 
+$(document).click(function() {
+    $( "#jar" ).effect( "shake", {direction: "up", times: 4, distance: 10}, 1000 );
+  });
+
 // Mobil menu
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active')
