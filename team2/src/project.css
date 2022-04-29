@@ -12,6 +12,10 @@
     --tag-blue: #00BBF9;
     --tag-TURQUOISE: #00F5D4;
     --tag-ORANGE:#ff9505;
+
+    
+    --card-color-1: rgb(223, 184, 223);
+    --card-color-2: #fff;
 }
 
 /*-----------------------------------  
@@ -25,22 +29,14 @@
     -> Nav
     -> Footer
 ----------------------------------*/
-html {
-    
-}
-
-body {
-    background: var(--background-color);
-    
-}
-
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
+
+body { background: var(--background-color); }
 
 .container {
     margin: 0 auto;
@@ -53,21 +49,13 @@ body {
     flex: wrap;
 }
 
-.split > * {
-    flex-basis: 100%;
-}
+.split > * { flex-basis: 100%;}
 
-main {
-    margin: 4rem 0;
-}
+main { margin: 4rem 0;}
 
-img {
-    max-width: 100%;
-}
+img { max-width: 100%;}
 
-.text-center {
-    text-align: center;
-}
+.text-center { text-align: center;}
 
 @media (max-width: 810px) {
     .split {
@@ -88,11 +76,6 @@ h1 {
     text-align: center;
     text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
 }
-
-h2 {
-
-}
-
 /*----------------------
     index.html 
  
@@ -345,8 +328,9 @@ form {
 }
 
 .card {
-    background: var(--color-main);
-    border: 1px solid rgb(88, 88, 88);
+    background: linear-gradient(to bottom right, var(--card-color-1), var(--card-color-2));
+    /*box-shadow: 0px 10px 60px rgba(255, 79, 216, 0.3);
+    */
     padding: 1rem;
     border-radius: 10px;
     display: flex;
@@ -368,7 +352,7 @@ input[type="radio"] {
     cursor: pointer;
     height: 0;
     width: 0;
-  }
+}
 
 input[type="radio"]:checked+label {
     background: rgb(116, 116, 116);
@@ -376,7 +360,7 @@ input[type="radio"]:checked+label {
 }
 
 .category-options {
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-radius: 10px;
     display: inline-block;
     padding: .5rem 1rem;
@@ -387,7 +371,11 @@ input[type="radio"]:checked+label {
 
 .category-options:hover {opacity: .6;}
 
-.any {background: var(--tag-ORANGE);}
+.category-options:focus {
+    border: 1px dotted grey;
+} 
+
+.other {background: var(--tag-ORANGE);}
 
 .stay-home {background: var(--tag-blue);}
 
@@ -412,6 +400,18 @@ input[type="radio"]:checked+label {
     flex-direction: column;
     margin-top: 1rem;
 }
+
+.idea-container h2 {
+    margin-bottom: 1rem;
+}
+
+th,td {
+    border: 1px solid;
+}
+
+td {
+    text-align: center;
+  }
 
 /*---------------------
     Nav

@@ -6,7 +6,7 @@ function startGetIdea() {
 }
 
 /* Mobile menu
-
+    - applies to all pages
 */
 const mobileMenu = document.getElementById('mobile-menu')
 const navMenu = document.querySelector('.nav-list')
@@ -18,15 +18,38 @@ mobileMenu.addEventListener('click', () => {
 })
 
 /* User form
-    - Validate form data before storing
-    - Store form data in userData.ideas[] 
+    - TODO: Validate form data before storing
+    - Store/Retrieve form data in userData.ideas[] with localStorage
 */
 
 let userData = []
 
-function displayIdeas() {
-    let ideaDisplay = document.querySelector('.user-ideas')
-    ideaDisplay.textContent = '\n' + JSON.stringify(userData, '\t', 2)
+function displayIdeas() {    
+    let ideaArray = userData.ideas
+
+    // Creates a table row for every existing entry
+    for (let i=0 ; i< ideaArray.length; i++) {
+        createRow( ideaArray[i].name, ideaArray[i].URL, ideaArray[i].date, ideaArray[i].category)
+    }
+}
+
+function createRow( name, url, date, category) {
+    console.log(name,url,date,category)
+    let ideaTable = document.querySelector('.idea-table')
+
+    let row = document.createElement('tr')
+
+    let cell1 = row.insertCell(0)
+    let cell2 = row.insertCell(1)
+    let cell3 = row.insertCell(2)
+    let cell4 = row.insertCell(3)
+    cell2.innerHTML = url
+    cell3.innerHTML = date
+    cell1.innerHTML = name
+    cell4.innerHTML = `<label class="${category} category-options">${category}</label>`
+
+    ideaTable.appendChild(row)
+
 }
 
 function addIdea(event) {
@@ -57,9 +80,14 @@ function addIdea(event) {
 
     // Add updated userData to localstorage
     localStorage.setItem('myIdeaList', JSON.stringify( userData))
+
+    // Update idea table
+    createRow(idea.name, idea.URL, idea.date, idea.category)
+
+    // Animate jar shake
 }
 
-// Runs once when add-idea page is loaded
+// Runs once when add-idea page has loaded
 function startAddIdea() {
     console.log("loaded")
     // Import user data if previously submitted

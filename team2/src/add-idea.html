@@ -48,20 +48,20 @@
                                     <label for="event-name">Event name:</label>
                                 </h3>
                                 
-                                <input type="text" name="event-name" id="event-name">
+                                <input type="text" name="event-name" id="event-name" placeholder="'FCC Dallas Meetup'" required />
                                 
                                 <h3>
                                     <label for="event-url">Event URL:</label>
                                 </h3>
                                 
-                                <input type="text" name="event-url" id="event-url">
+                                <input type="text" name="event-url" id="event-url" />
                                 <br>
             
                                 <h3>
                                     <label for="event-date">Date:</label>
                                 </h3>
                                 
-                                <input type="date" name="event-date" id="event-date">
+                                <input type="date" name="event-date" id="event-date" />
                                 
                             </div>
     
@@ -69,42 +69,49 @@
                                 <h3>
                                     <label for="category">Category:</label>
                                 </h3>
-                                
-                                <input type="radio" id="any" name="category" value="any">
-                                <label class="any category-options" for="any">Any</label>
             
-                                <input type="radio" id="stay-home" name="category" value="stay-home">
+                                <input type="radio" id="stay-home" name="category" value="stay-home" />
                                 <label class="stay-home category-options" for="stay-home">Stay Home</label>
                                 
-                                <input type="radio" id="resturant" name="category" value="resturant">
-                                <label class="resturant category-options" for="resturant">Park</label>
+                                <input type="radio" id="resturant" name="category" value="resturant" />
+                                <label class="resturant category-options" for="resturant">Resturant</label>
                                 
-                                <input type="radio" id="road-trip" name="category" value="road-trip">
+                                <input type="radio" id="road-trip" name="category" value="road-trip" />
                                 <label class="road-trip category-options" for="road-trip">Road Trip</label>
                                 
-                                <input type="radio" id="indoors" name="category" value="indoors">
+                                <input type="radio" id="indoors" name="category" value="indoors" />
                                 <label class="indoors category-options" for="indoors">Indoors</label>
                                 
-                                <input type="radio" id="outdoors" name="category" value="outdoors">
+                                <input type="radio" id="outdoors" name="category" value="outdoors" />
                                 <label class="outdoors category-options" for="outdoors">Outdoors</label>
-            
+                                
+                                <input type="radio" id="other" name="category" value="other" />
+                                <label class="other category-options" for="other">Other</label>
                             </div>
                         </div>
-                        <button class="form-btn">Submit</button>
+                        <input type="submit" value="Submit" class="form-btn" />
                     </form>
                 </div>
 
                 <div class="img-container">
-                    <img src="./img/jar.png" alt="Idea jar">
+                    <img src="./img/jar_2.png" alt="Idea jar">
                 </div>
             </section>
             
             <!--Stored Ideas-->
             <section class="card idea-container">
                 <h2 class="text-center">Your current ideas:</h2>
-                <div class="user-ideas">
+                
+                <table class="idea-table">
+                    <tr>
+                        <th>Event</th>
+                        <th>Event URL</th>
+                        <th>Date</th>
+                        <th>Label</th>
+                    </tr>
                     
-                </div>
+                </table>
+                
             </section>
             
         </div>
