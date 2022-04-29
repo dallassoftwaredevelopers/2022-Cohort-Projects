@@ -10,15 +10,14 @@
     <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./project.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-
 </head>
 
-<body>
+<body onload="startGetIdea()">
     <header>
         <!--Nav-->
         <nav>
             <div class="container">
-                <img id="nav-logo" src="./img/logo.png" alt="Idea jar logo">
+                <img id="nav-logo" src="./img/logo_2.png" alt="Idea jar logo">
                 <div id="mobile-menu">
                     <span></span>
                     <span></span>
@@ -43,19 +42,20 @@
         <section class="container">
             <h1>What do you want to to today?</h1>
             <div class="containerGet">
-                <div class="containerJar"> <img src="./img/jar.png" id="jar" alt="jar with colored paper slips"></img></div>
-                <div class="containerButtons">
-                    <section class="activity-buttons">
-                        <button class="btn shake open" id="any">Any Activity</button>
-                        <button class="btn shake open" id="home">Stay Home</button>
-                        <button class="btn shake open" id="restaurant">Restaurant</button>
-                        <button class="btn shake open" id="indoor">Indoor Activity</button>
-                        <button class="btn shake open" id="outdoor">Outdoor Activity</button>
-                        <button class="btn shake open" id="trip">Road Trip</button>
-                    </section>
-                </div>
-            </div>
-            <!--Creates the popup body-->
+
+                <div>
+                    <img src="./img/jar.png" id="jar" alt="jar with colored paper slips"></img>
+                </div>      
+                <section class="activity-buttons">
+                    <button class="shake" id="any">Any Activity</button>
+                    <button class="shake" id="home">Stay Home</button>
+                    <button class="shake" id="restaurant">Restaurant</button>
+                    <button class="shake" id="indoor">Indoor Activity</button>
+                    <button class="shake" id="outdoor">Outdoor Activity</button>
+                    <button class="shake" id="trip">Road Trip</button>
+
+                </section>
+                <!--Creates the popup body-->
             <div class="containerModal">
                 <div class="popup-overlay">
                     <!--Creates the popup content-->
@@ -90,7 +90,7 @@
     </footer>
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script defer src="./project.js"></script>
+    <script src="./project.js"></script>
 </body>
 
 </html>
