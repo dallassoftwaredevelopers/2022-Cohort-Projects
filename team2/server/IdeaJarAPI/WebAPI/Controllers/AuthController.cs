@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebAPI.Controllers
 {
@@ -18,6 +19,13 @@ namespace WebAPI.Controllers
         public AuthController(IConfiguration configuration)
         {
             this._configuration = configuration;
+        }
+
+        [HttpGet, Authorize]
+        public ActionResult<string> GetMe()
+        {
+            var userName = User?.Identity?.Name;
+            return Ok(userName);
         }
 
         [HttpPost("register")]
