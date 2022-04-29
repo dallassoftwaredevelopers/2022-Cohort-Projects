@@ -67,6 +67,12 @@ function addIdea(event) {
         }
     }
 
+    // Checks to make sure there is at least an event name and category
+    if(!document.getElementById('event-name').value || checkedRadio == "") {
+        alert("Please enter both an event name and choose a category")
+         return
+    }
+
     let idea = {
         id: Date.now(),
         name: document.getElementById('event-name').value,
