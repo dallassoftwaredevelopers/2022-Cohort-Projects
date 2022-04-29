@@ -1,10 +1,22 @@
 const mobileMenu = document.getElementById('mobile-menu')
 const navMenu = document.querySelector('.nav-list')
 
+/* shake function on get idea */
 $(document).click(function() {
     $( "#jar" ).effect( "shake", {direction: "up", times: 4, distance: 10}, 1000 );
   });
 
+/* modal on get idea */
+$(".open").on("click", function() {
+    setTimeout(() => {
+      $(".popup-overlay, .popup-content").addClass("active");
+  }, 1300)
+    });
+ 
+  $(".close, .popup-overlay").on("click", function() {
+    $(".popup-overlay, .popup-content").removeClass("active");
+  });
+the
 // Mobil menu
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active')
