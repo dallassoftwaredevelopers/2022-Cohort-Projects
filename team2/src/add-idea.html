@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,118 +10,122 @@
     <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
     <script defer src="./project.js"></script>
 </head>
+
 <body onload="startAddIdea()">
-    <header>
-        <!--Nav-->
-        <nav>
+    <div class="contentWrap">
+        <header>
+            <!--Nav-->
+            <nav>
+                <div class="container">
+                    <img id="nav-logo" src="./img/logo_2.png" alt="Idea jar logo">
+                    <div id="mobile-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">Add Idea</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./get-idea.html">Get Idea</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main id="add-item">
             <div class="container">
-                <img id="nav-logo" src="./img/logo_2.png" alt="Idea jar logo">
-                <div id="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="">Add Idea</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./get-idea.html">Get Idea</a>
-                    </li>
-                </ul>
+                <!--Form and image-->
+                <section class="split idea-form">
+                    <div class="card">
+                        <!--User submission form-->
+                        <form>
+                            <div class="split">
+                                <div class="form-space">
+                                    <h3>
+                                        <label for="event-name">Event name:</label>
+                                    </h3>
+
+                                    <input type="text" name="event-name" id="event-name"
+                                        placeholder="'FCC Dallas Meetup'" required />
+
+                                    <h3>
+                                        <label for="event-url">Event URL:</label>
+                                    </h3>
+
+                                    <input type="text" name="event-url" id="event-url" />
+                                    <br>
+
+                                    <h3>
+                                        <label for="event-date">Date:</label>
+                                    </h3>
+
+                                    <input type="date" name="event-date" id="event-date" />
+
+                                </div>
+
+                                <div>
+                                    <h3>
+                                        <label for="category">Category:</label>
+                                    </h3>
+
+                                    <input type="radio" id="stay-home" name="category" value="stay-home" />
+                                    <label class="stay-home category-options" for="stay-home">Stay Home</label>
+
+                                    <input type="radio" id="resturant" name="category" value="resturant" />
+                                    <label class="resturant category-options" for="resturant">Resturant</label>
+
+                                    <input type="radio" id="road-trip" name="category" value="road-trip" />
+                                    <label class="road-trip category-options" for="road-trip">Road Trip</label>
+
+                                    <input type="radio" id="indoors" name="category" value="indoors" />
+                                    <label class="indoors category-options" for="indoors">Indoors</label>
+
+                                    <input type="radio" id="outdoors" name="category" value="outdoors" />
+                                    <label class="outdoors category-options" for="outdoors">Outdoors</label>
+
+                                    <input type="radio" id="other" name="category" value="other" />
+                                    <label class="other category-options" for="other">Other</label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Submit" class="form-btn" />
+                        </form>
+                    </div>
+
+                    <div class="img-container">
+                        <img class="jar" src="./img/jar_2.png" alt="Idea jar">
+                    </div>
+                </section>
+
+                <!--Stored Ideas-->
+                <section class="card idea-container">
+                    <h2 class="text-center">Your current ideas:</h2>
+
+                    <table class="idea-table">
+                        <tr>
+                            <th>Event</th>
+                            <th>Event URL</th>
+                            <th>Date</th>
+                            <th>Label</th>
+                        </tr>
+
+                    </table>
+
+                </section>
+
             </div>
-        </nav>
-    </header>
-
-    <main id="add-item">
-        <div class="container">
-            <!--Form and image-->
-            <section class="split idea-form">
-                <div class="card">
-                    <!--User submission form-->
-                    <form>
-                        <div class="split">
-                            <div class="form-space">
-                                <h3>
-                                    <label for="event-name">Event name:</label>
-                                </h3>
-                                
-                                <input type="text" name="event-name" id="event-name" placeholder="'FCC Dallas Meetup'" required />
-                                
-                                <h3>
-                                    <label for="event-url">Event URL:</label>
-                                </h3>
-                                
-                                <input type="text" name="event-url" id="event-url" />
-                                <br>
-            
-                                <h3>
-                                    <label for="event-date">Date:</label>
-                                </h3>
-                                
-                                <input type="date" name="event-date" id="event-date" />
-                                
-                            </div>
-
-                            <div>
-                                <h3>
-                                    <label for="category">Category:</label>
-                                </h3>
-            
-                                <input type="radio" id="stay-home" name="category" value="stay-home" />
-                                <label class="stay-home category-options" for="stay-home">Stay Home</label>
-                                
-                                <input type="radio" id="resturant" name="category" value="resturant" />
-                                <label class="resturant category-options" for="resturant">Resturant</label>
-                                
-                                <input type="radio" id="road-trip" name="category" value="road-trip" />
-                                <label class="road-trip category-options" for="road-trip">Road Trip</label>
-                                
-                                <input type="radio" id="indoors" name="category" value="indoors" />
-                                <label class="indoors category-options" for="indoors">Indoors</label>
-                                
-                                <input type="radio" id="outdoors" name="category" value="outdoors" />
-                                <label class="outdoors category-options" for="outdoors">Outdoors</label>
-                                
-                                <input type="radio" id="other" name="category" value="other" />
-                                <label class="other category-options" for="other">Other</label>
-                            </div>
-                        </div>
-                        <input type="submit" value="Submit" class="form-btn" />
-                    </form>
-                </div>
-
-                <div class="img-container">
-                    <img class="jar" src="./img/jar_2.png" alt="Idea jar">
-                </div>
-            </section>
-            
-            <!--Stored Ideas-->
-            <section class="card idea-container">
-                <h2 class="text-center">Your current ideas:</h2>
-                
-                <table class="idea-table">
-                    <tr>
-                        <th>Event</th>
-                        <th>Event URL</th>
-                        <th>Date</th>
-                        <th>Label</th>
-                    </tr>
-                    
-                </table>
-                
-            </section>
-            
-        </div>
-    </main>
+        </main>
+    </div>
     <!--Footer-->
     <footer>
         <div class="containerFooter">
             <div>
-                <h3>
+                <h3 class="text-center">
                     <a href="./team-2b/team-page.html">
                         The Unstoppable Team 2B
                     </a>
@@ -129,22 +134,23 @@
                     Ariel, Jennifer, <br> Michelle, John
                 </p>
             </div>
-            
+
             <div>
                 <h3 class="text-center">
                     Check out our work
                 </h3>
                 <div class=" text-center media-tray">
-                
+
                     <a target="_blank" href="https://fcc-dallas.com/">
                         <i class="fab fa-brands fa-free-code-camp fa-2x"></i>
                     </a>
                     <a target="_blank" href="https://github.com/jgvargas/2022-Cohort-Projects">
-                        <i class="fab fa-brands fa-github fa-2x" aria-hidden="true"></i>   
+                        <i class="fab fa-brands fa-github fa-2x" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 </body>
+
 </html>
