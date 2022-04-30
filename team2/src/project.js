@@ -53,7 +53,7 @@ function createRow( name, url, date, category) {
 }
 
 function addIdea(event) {
-    event.preventDefault() // Stops form reload on submit
+    //event.preventDefault() // Stops form reload on submit
 
     // Get radio input
     let checkedRadio = ''

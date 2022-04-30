@@ -15,6 +15,7 @@
 
     
     --card-color-1: #dfb8df;
+    --card-color-1-original: #dfb8df;
     --card-color-2: #fff;
 
     --test-1: #e1e2f3;
@@ -25,6 +26,7 @@
     --test-6: #146696;
     --test-7: #ef89b7;
     --color-grey-10: rgb(200, 200, 200);
+    --color-purple-10: #6F57EB;
 }
 
 /*-----------------------------------  
@@ -46,7 +48,7 @@
 }
 
 html {
-    background: linear-gradient(to bottom right, var(--card-color-1), var(--card-color-2));
+    background: linear-gradient( var(--card-color-1), var(--card-color-2));
     height: 100%;
 }
 
@@ -342,12 +344,14 @@ form {
 
 .card {
     background: #fff;
-    box-shadow: 0px 10px 60px rgba(255, 79, 216, 0.3);
+    box-shadow: 0px 10px 30px rgba(255, 79, 216, 0.3);
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-self: flex-start;
+    margin-top: 1rem;
 }
 
 .card-col {
@@ -367,8 +371,8 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked+label {
-    background: var(--test-1);
     color: var(--icon-color);
+    transform: translateY(-2px);
 }
 
 .category-options {
@@ -379,16 +383,17 @@ input[type="radio"]:checked+label {
     margin: .5rem 0;
     text-align: center;
     width: 120px;
+    transition: transform .2s ease-in-out;
 }
 
-.category-options:hover {opacity: .6;}
+.category-options:hover {transform: scale(1.05);}
 
 .category-options:focus,
 input[type="radio"]:focus {
     outline: 4px solid grey;
 } 
 
-/*
+
 .other {background: var(--tag-ORANGE);}
 
 .stay-home {background: var(--tag-blue);}
@@ -400,14 +405,19 @@ input[type="radio"]:focus {
 .indoors {background: var(--tag-pink);}
 
 .outdoors {background: var(--tag-purple);}
-*/
+
 /* END OF Radio input css */
 
 .form-btn {
     padding: .5rem 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--color-grey-10);
     border-radius: 10px;
     margin-top: 1rem;
+    transition: transform .2s ease-in-out;
+}
+
+.form-btn:active {
+    transform: translateY(3px);
 }
 
 .idea-container {
@@ -417,16 +427,14 @@ input[type="radio"]:focus {
 }
 
 .idea-container h2 {
-    margin-bottom: 1rem;
-}
-
-th,td {
-    border: 1px solid;
+    margin-bottom: 1.5rem;
 }
 
 td {
+    border: 1px solid;
+    border-collapse: collapse;
     text-align: center;
-  }
+}
 
 /*---------------------
     Nav
@@ -531,7 +539,7 @@ nav a:hover {
 ---------------*/
 footer {
     padding: 1rem 0;
-    background: var(--header-footer-color);
+    background: var(--test-2);
     color: #fff;
     width: 100%;
     margin-top: auto;
