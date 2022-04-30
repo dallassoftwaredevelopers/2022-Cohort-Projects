@@ -47,10 +47,23 @@
 }
 
 html {
-    background: linear-gradient( var(--card-color-1), var(--card-color-2));
-    height: 100%;
+  height: 100%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+html {
+    background: linear-gradient( var(--card-color-1), var(--card-color-2));
+}
+
+.contentWrap {
+  flex: 1 0 auto;
+}
 
 .container {
   margin: 0 auto;
@@ -254,14 +267,10 @@ main ul {
 }
 
 
-.activity-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-around;
-    align-content: space-around;
+.containerGet .activity-buttons {
     width: 50%;
     min-width: 410px;
+    position: static;
 }
 
 #modal-btn {
@@ -270,8 +279,13 @@ main ul {
 }
 
 #jar {
-    width: 60%;
+    width: 20%;
     min-width: 220px;
+    max-width: 300px;
+}
+
+.containerJar img {
+  position: absolute;
 }
 
 /* Buttons */
@@ -359,6 +373,7 @@ main ul {
   /*Hides pop-up when there is no "active" class*/
   visibility: hidden;
   position: absolute;
+  bottom: 30%;
   background: var(--tag-pink);
   border: 3px solid black;
   width: 50%;
@@ -405,6 +420,10 @@ main ul {
     flex-direction: column-reverse;
     align-items: center;
     gap: 2rem;
+  }
+
+  .containerJar img {
+    position: static;
   }
 }
 
@@ -681,8 +700,7 @@ footer {
     color: #fff;
     width: 100%;
     margin-top: auto;
-    position: absolute;
-    bottom: 0;
+    flex-shrink: 0;
 }
 
 .containerFooter {
@@ -732,7 +750,8 @@ footer p + p {
   .containerFooter {
     flex-direction: column;
     gap: 15px;
-    text-align: center;
+    align-items: center;
+    
   }
   footer p + p {
     order: -1;
