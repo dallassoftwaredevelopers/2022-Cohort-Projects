@@ -6,6 +6,8 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
+using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace WebAPI.Controllers
 {
@@ -37,6 +39,26 @@ namespace WebAPI.Controllers
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
+            var query = @$"INSERT INTO user (first_name, last_name, email, password_hash, password_salt) VALUES ('Ariel', 'Rodriguez', 'ariel@gmail.com', '{passwordHash}', '12345')";
+
+            var table = new DataTable();
+            var dataSource = _configuration.GetSection("Database:IdeaJarConnectionString").Value;
+            Console.WriteLine(dataSource);
+            MySqlDataReader reader;
+
+            using (var connection = new MySqlConnection(dataSource))
+            {
+                connection.Open();
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    reader = command.ExecuteReader();
+                    table.Load(reader);
+
+                    reader.Close();
+                }
+            }
+
+
             return Ok(user);
         }
 
@@ -52,10 +74,11 @@ namespace WebAPI.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<string>> Login (UserDTO request)
         {
-            if (user.Username != request.Username)
-                return BadRequest("User not found.");
-            if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
-                return BadRequest("Wrong password.");
+            if (user.Username != request.Username || !VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+                return BadRequest("Wrong username/password combination.");
+            // TODO:
+            //if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+            //    return BadRequest("Wrong password.");
 
             string token = CreateToken(user);
             return Ok(token);
