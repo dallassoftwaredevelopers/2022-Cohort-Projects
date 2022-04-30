@@ -18,11 +18,13 @@
     --card-color-2: #fff;
 
     --test-1: #e1e2f3;
-    --test-2: #7d70ba;
+    --test-2: #8274c1;
     --test-3: #dec1ff;
     --test-4: #5cc8ff;
-    --test-5: #146696;
-    --test-6: #7d70ba;
+    --test-5: #78bdef;
+    --test-6: #146696;
+    --test-7: #ef89b7;
+    --color-grey-10: rgb(200, 200, 200);
 }
 
 /*-----------------------------------  
@@ -365,12 +367,12 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked+label {
-    background: rgb(116, 116, 116);
+    background: var(--test-1);
     color: var(--icon-color);
 }
 
 .category-options {
-    border: 1px solid #000;
+    border: 1px solid var(--color-grey-10);
     border-radius: 10px;
     display: inline-block;
     padding: .5rem 1rem;
@@ -381,10 +383,12 @@ input[type="radio"]:checked+label {
 
 .category-options:hover {opacity: .6;}
 
-.category-options:focus {
-    border: 1px dotted grey;
+.category-options:focus,
+input[type="radio"]:focus {
+    outline: 4px solid grey;
 } 
 
+/*
 .other {background: var(--tag-ORANGE);}
 
 .stay-home {background: var(--tag-blue);}
@@ -396,6 +400,7 @@ input[type="radio"]:checked+label {
 .indoors {background: var(--tag-pink);}
 
 .outdoors {background: var(--tag-purple);}
+*/
 /* END OF Radio input css */
 
 .form-btn {
