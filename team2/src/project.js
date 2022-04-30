@@ -1,7 +1,18 @@
-// Isolated code
+// Isolated for get-idea.html
 function startGetIdea() {
     $(document).click(function() {
         $( "#jar" ).effect( "shake", {direction: "up", times: 4, distance: 10}, 1000 );
+      });
+  
+    /* modal on get idea */
+    $(".open").on("click", function() {
+        setTimeout(() => {
+          $(".popup-overlay, .popup-content").addClass("active");
+      }, 1300)
+        });
+
+      $(".close, .popup-overlay").on("click", function() {
+        $(".popup-overlay, .popup-content").removeClass("active");
       });
 }
 
@@ -11,6 +22,7 @@ function startGetIdea() {
 const mobileMenu = document.getElementById('mobile-menu')
 const navMenu = document.querySelector('.nav-list')
 
+// Mobil menu
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active')
     navMenu.classList.toggle('active')
