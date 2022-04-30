@@ -43,9 +43,10 @@ function createRow( name, url, date, category) {
     let cell2 = row.insertCell(1)
     let cell3 = row.insertCell(2)
     let cell4 = row.insertCell(3)
-    cell2.innerHTML = url
-    cell3.innerHTML = date
     cell1.innerHTML = name
+    cell2.innerHTML = date
+    cell3.innerHTML = `<a href="${url}">${url}</a>`
+    
     cell4.innerHTML = `<label class="${category} category-options">${category}</label>`
 
     ideaTable.appendChild(row)
@@ -67,6 +68,13 @@ function addIdea(event) {
         }
     }
 
+    // Validate input 
+    if( !document.getElementById('event-name').value || checkedRadio == "") {
+        alert("Please enter both an event name and category")
+        console.log("first")
+        return
+    }
+
     let idea = {
         id: Date.now(),
         name: document.getElementById('event-name').value,
@@ -85,6 +93,8 @@ function addIdea(event) {
     createRow(idea.name, idea.URL, idea.date, idea.category)
 
     // Animate jar shake
+    let jar = document.querySelector('.jar')
+    jar.classList.add('jar-shake')
 }
 
 // Runs once when add-idea page has loaded
