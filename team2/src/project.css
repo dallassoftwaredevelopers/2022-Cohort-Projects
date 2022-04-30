@@ -14,8 +14,15 @@
     --tag-ORANGE:#ff9505;
 
     
-    --card-color-1: rgb(223, 184, 223);
+    --card-color-1: #dfb8df;
     --card-color-2: #fff;
+
+    --test-1: #e1e2f3;
+    --test-2: #7d70ba;
+    --test-3: #dec1ff;
+    --test-4: #5cc8ff;
+    --test-5: #146696;
+    --test-6: #7d70ba;
 }
 
 /*-----------------------------------  
@@ -36,7 +43,11 @@
     font-family: sans-serif;
 }
 
-body { background: var(--background-color); }
+html {
+    background: linear-gradient(to bottom right, var(--card-color-1), var(--card-color-2));
+    height: 100%;
+}
+
 
 .container {
     margin: 0 auto;
@@ -328,9 +339,8 @@ form {
 }
 
 .card {
-    background: linear-gradient(to bottom right, var(--card-color-1), var(--card-color-2));
-    /*box-shadow: 0px 10px 60px rgba(255, 79, 216, 0.3);
-    */
+    background: #fff;
+    box-shadow: 0px 10px 60px rgba(255, 79, 216, 0.3);
     padding: 1rem;
     border-radius: 10px;
     display: flex;
@@ -417,7 +427,7 @@ td {
     Nav
 ---------------------*/
 nav {
-    background: var(--header-footer-color);
+    background: var(--test-2);
 }
 
 nav .container {
