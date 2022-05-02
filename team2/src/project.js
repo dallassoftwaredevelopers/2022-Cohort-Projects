@@ -59,7 +59,22 @@ function createRow( name, url, date, category) {
     cell2.innerHTML = date
     cell3.innerHTML = `<a href="${url}">${url}</a>`
     
-    cell4.innerHTML = `<label class="${category} category-options">${category}</label>`
+    // Matches category value to appropriate css class
+    let categoryLabel = ''
+    if (category === 'stay-home')
+        categoryLabel = 'label-home'
+    else if ( category === 'restaurant' )
+        categoryLabel = 'label-restaurant'
+    else if ( category === 'road-trip' )
+        categoryLabel = 'label-trip'
+    else if ( category === 'indoors' )
+        categoryLabel = 'label-indoor'
+    else if ( category === 'outdoors' )
+        categoryLabel = 'label-outdoor'
+    else 
+        categoryLabel = 'label-any'
+
+    cell4.innerHTML = `<label class="${categoryLabel} category-options">${category}</label>`
 
     ideaTable.appendChild(row)
 
