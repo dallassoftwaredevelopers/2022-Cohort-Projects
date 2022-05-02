@@ -84,6 +84,31 @@ img { max-width: 100%;}
 
 .text-center { text-align: center;}
 
+/* Colors */
+.label-home {
+  background-color: var(--tag-blue);
+}
+
+.label-restaurant {
+  background-color: var(--tag-yellow);
+}
+
+.label-indoor {
+  background-color: var(--tag-pink);
+}
+
+.label-outdoor {
+  background-color: var(--header-footer-color);
+}
+
+.label-trip {
+    background-color: var(--tag-TURQUOISE);
+}
+/* any/other */
+.label-any {
+  background-color: var(--tag-ORANGE);
+}
+
 @media (max-width: 810px) {
   .split {
     flex-direction: column;
@@ -93,16 +118,6 @@ img { max-width: 100%;}
   }
 }
 
-/*---------------------
-    Typography
----------------------*/
-
-h1 {
-  color: var(--header-footer-color);
-  font-size: 4rem;
-  text-align: center;
-  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
-}
 /*----------------------
     index.html 
  
@@ -122,30 +137,6 @@ h1 {
   display: flex;
   gap: 0.5rem;
   margin: 1rem;
-}
-
-.i,
-.a2 {
-  color: var(--tag-purple);
-}
-
-.d,
-.r {
-  color: var(--tag-pink);
-}
-
-/*logo has yellow E but without the outline it is hard to read.. */
-/* .e {
-    color: var(--tag-yellow);
-} */
-
-.a {
-  color: var(--tag-TURQUOISE);
-}
-
-.j,
-.e {
-  color: var(--tag-blue);
 }
 
 .btnContainerMain {
@@ -171,16 +162,7 @@ h1 {
   width: 300px;
   min-width: 250px;
   height: 100px;
-}
-
-.putIdeaBtnMain,
-.putIdeaExplain {
-  background: var(--tag-blue);
-}
-
-.getIdeaBtnMain,
-.takeIdeaExplain {
-  background: var(--tag-pink);
+  transition: transform .2s ease-in-out;
 }
 
 .putIdeaBtnMain:hover,
@@ -243,6 +225,12 @@ h1 {
     get-item.html
 
 ---------------------*/
+.mainHeading {
+  color: var(--header-footer-color);
+  font-size: 4rem;
+  text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+}
+
 main ul {
   list-style-type: none;
 }
@@ -259,7 +247,6 @@ main ul {
     margin: 4rem 0;
 }
 .containerGet div {
-    text-align: center;
     width: 50%;
     display: flex;
     align-items: center;
@@ -316,30 +303,7 @@ main ul {
   align-items: center;
   justify-content: center;
 }
-/* Button Labels */
-#any {
-  background-color: var(--tag-ORANGE);
-}
 
-#home {
-  background-color: var(--tag-blue);
-}
-
-#restaurant {
-  background-color: var(--tag-yellow);
-}
-
-#indoor {
-  background-color: var(--tag-pink);
-}
-
-#outdoor {
-  background-color: var(--header-footer-color);
-}
-
-#trip {
-    background-color: var(--tag-TURQUOISE);
-}
   
 /*
     Buttons
@@ -540,28 +504,6 @@ input[type="radio"]:checked+label {
 input[type="radio"]:focus {
     outline: 4px solid grey;
 } 
-
-
-.other {background: var(--tag-ORANGE);}
-
-
-.stay-home {
-  background: var(--tag-blue);
-}
-
-.resturant {
-  background: var(--tag-yellow);
-}
-
-.road-trip {
-  background: var(--tag-TURQUOISE);
-}
-
-.indoors {
-  background: var(--tag-pink);
-}
-
-.outdoors {background: var(--tag-purple);}
 
 /* END OF Radio input css */
 
