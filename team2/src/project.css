@@ -85,27 +85,27 @@ img { max-width: 100%;}
 .text-center { text-align: center;}
 
 /* Colors */
-.label-home {
+.stay-home {
   background-color: var(--tag-blue);
 }
 
-.label-restaurant {
+.restaurant {
   background-color: var(--tag-yellow);
 }
 
-.label-indoor {
+.indoor {
   background-color: var(--tag-pink);
 }
 
-.label-outdoor {
+.outdoor {
   background-color: var(--header-footer-color);
 }
 
-.label-trip {
+.road-trip {
     background-color: var(--tag-TURQUOISE);
 }
 /* any/other */
-.label-any {
+.other {
   background-color: var(--tag-ORANGE);
 }
 
