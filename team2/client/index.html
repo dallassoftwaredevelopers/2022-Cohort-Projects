@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,71 +11,96 @@
     <script defer src="./src/project.js"></script>
     <title>Team 2/B</title>
 </head>
+
 <body>
-    <header>
-        <!--Nav-->
-        <nav>
-            <nav class="containerNav">
-                <h2 id="logo">Team 2B</h2>
-                <div class="jarLogo" >
-                    <img src="https://i.ibb.co/H4jKnBL/jar.png" alt="jar">
-                    <h2>Idea Jar</h2>
-                 </div>
-                <div id="mobile-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+    <div class="contentWrap">
+        <header>
+            <!--Nav-->
+            <nav>
+                <div class="container">
+                    <img id="nav-logo" src="./src/img/logo.png" alt="Idea jar logo">
+                    <div id="mobile-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./src/add-idea.html">Add Idea</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./src/get-idea.html">Get Idea</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./src/add-idea.html">Add Idea</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./src/get-idea.html">Get Idea</a>
-                    </li>
-                </ul>
             </nav>
-        </nav>
-    </header>
-    <main>
+        </header>
+        
+        <main>
 
-        <section class="containerMain">
-            <h1 class="h1Main"><span class="i">I</span><span class="d">D</span><span class="e">E</span><span class="a">A</span>
-                <span class="j">J</span><span class="a2">A</span><span class="r">R</span></h1>
+            <section class="containerMain">
+                
 
-            <div class="btnContainerMain">
-                <a class="putIdeaBtnMain" href="./src/add-idea.html">Put Idea In Jar</a>
-                <a class="getIdeaBtnMain" href="./src/get-idea.html">Take Idea From Jar</a>
+                <div class="btnContainerMain">
+                    <a class="putIdeaBtnMain label-home" href="./src/add-idea.html">Put Idea In Jar</a>
+                    <a class="getIdeaBtnMain label-indoor" href="./src/get-idea.html">Take Idea From Jar</a>
+                </div>
+
+                <div class="containerOverview" id="overview">
+                    <p>Do you have a difficulty deciding on a resturant or what you want to do when you are bored? Let
+                        Idea Jar help!</p>
+                    <p>Idea Jar keeps track of resturants you want to try and fun activities you want to do.</p>
+                    <section class="containerExplain">
+                        <section>
+                            <div class="putIdeaExplain label-home">PUT IDEA IN JAR</div>
+                            <p>Use this function to add resturants and fun activities when you learn about them.</p>
+                        </section>
+                        <section>
+                            <div class="takeIdeaExplain label-indoor">TAKE IDEA FROM JAR</div>
+                            <p>Select this function when you are ready for IDEA JAR to randomly select from the ideas
+                                you've entered, making the decision for you. </p>
+                        </section>
+                    </section>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!--Footer-->
+    <footer>
+        <div class="containerFooter">
+            <div>
+                <h3 class="text-center">
+                    <a href="./src/team-2b/team-page.html">
+                        The Unstoppable Team 2B
+                    </a>
+                </h3>
+                <p class="text-center names">
+                    Ariel, Jennifer, <br> Michelle, John
+                </p>
             </div>
 
             <div>
-                <p>INSERT TEXT HERE EXPLAINING IDEA JAR</p>
-            </div>
+                <h3 class="text-center">
+                    Check out our work
+                </h3>
+                <div class=" text-center media-tray">
 
-        </section>
-
-    </main>
-    <footer>
-        <div class="container">
-            <p class="names">
-                Ariel, John, Jennifer, <br>Michelle, Samuel
-            </p>
-            <p>
-                <a href="./src/team-2b/team-page.html">
-                    The Unstoppable Team 2B
-                </a>
-            </p>
-            <div class="media-tray">
-                <a target="_blank" href="https://fcc-dallas.com/">
-                    <i class="fab fa-brands fa-free-code-camp fa-2x"></i>
-                </a>
-                <a target="_blank" href="https://github.com/jgvargas/2022-Cohort-Projects">
-                    <i class="fab fa-brands fa-github fa-2x" aria-hidden="true"></i>   
-                </a>
+                    <a target="_blank" href="https://fcc-dallas.com/">
+                        <i class="fab fa-brands fa-free-code-camp fa-2x"></i>
+                    </a>
+                    <a target="_blank" href="https://github.com/jgvargas/2022-Cohort-Projects">
+                        <i class="fab fa-brands fa-github fa-2x" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
+        </div>
     </footer>
 </body>
+
 </html>
