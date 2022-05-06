@@ -349,6 +349,9 @@ main ul {
   /*displays pop-up when "active" class is present*/
   visibility: visible;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .popup-content {
@@ -361,16 +364,20 @@ main ul {
   visibility: visible;
 }
 
+.popup-content > h2 {
+  padding: 2rem;
+}
+
 .open:hover {
   border: 10px solid black;
 }
 
 .mdlBtn {
-  padding: 1.5rem 5rem;
-  /* margin: 3rem; */
+  padding: 1rem;
   font-size: 1.5rem;
-  height: 15px;
-  width: 18px;
+  height: 70px;
+  width: 220px;
+  min-width: 185px;
   color: black;
   background-color: white;
   border-radius: 10px;
@@ -379,6 +386,12 @@ main ul {
   justify-content: center;
 }
 
+.popup-btn-container{
+  padding: 5rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
 @media all and (max-width: 810px) {
   .containerGet {
     flex-direction: column-reverse;
@@ -388,6 +401,11 @@ main ul {
 
   .containerJar img {
     position: static;
+  }
+
+  .popup-btn-container{
+    flex-direction: column;
+    align-items: center;
   }
 }
 
