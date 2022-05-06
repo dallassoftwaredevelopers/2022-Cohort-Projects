@@ -1,5 +1,26 @@
-// Isolated for get-idea.html
-function startGetIdea() {
+/*  TABLE OF CONTENTS
+
+    Mobile menu
+    get-idea.html
+    add-item.html
+*/
+
+/*------------------------- 
+    Mobile menu
+    - applies to all pages
+--------------------------*/
+const mobileMenu = document.getElementById('mobile-menu')
+const navMenu = document.querySelector('.nav-list')
+
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active')
+    navMenu.classList.toggle('active')
+})
+
+/*---------------------------------- 
+    Get-idea.html
+----------------------------------*/
+    function startGetIdea() {
 
 
     /* modal on get idea */
@@ -64,24 +85,18 @@ function generateRandomIdea(ideasInCategory){
     }
 }
 
+/* ----------------------------------------
+    Add-idea.html overview
+    - On page load startAddIdea()
+    - Checks for existing userData in displayIdeas() with localStorage
+        - If present populate table in createRow()
+    - User submits idea and calls addIdea()
+        - Jar is animated startJar()
 
-
-/* Mobile menu
-    - applies to all pages
-*/
-const mobileMenu = document.getElementById('mobile-menu')
-const navMenu = document.querySelector('.nav-list')
-
-// Mobil menu
-mobileMenu.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active')
-    navMenu.classList.toggle('active')
-})
-
-/* User form
-    - TODO: Validate form data before storing
-    - Store/Retrieve form data in userData.ideas[] with localStorage
-*/
+    TODO: 
+    - Validate form data before storing
+    - Change date to dd-mm-yy
+--------------------------------------------*/
 
 let userData = []
 
