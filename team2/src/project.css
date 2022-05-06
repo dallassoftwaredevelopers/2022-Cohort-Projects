@@ -13,9 +13,10 @@
   --tag-TURQUOISE: #00f5d4;
   --tag-ORANGE: #ff9505;
   
-  --card-color-1: #dfb8df;
-  --card-color-1-original: #dfb8df;
-  --card-color-2: #fff;
+  --bg-gradient-1: #dfb8df;
+  --bg-gradient-2: #fff;
+  --nav-btn: #5cc8ff;
+  --nav-btn-hover: #6dceff;
 
   --test-1: #e1e2f3;
   --test-2: #8274c1;
@@ -26,6 +27,8 @@
   --test-7: #7b88d1;
   --color-grey-10: rgb(200, 200, 200);
   --color-purple-10: #6F57EB;
+
+
 }
 
 /*-----------------------------------  
@@ -58,7 +61,7 @@ body {
 }
 
 html {
-    background: linear-gradient( var(--card-color-1), var(--card-color-2));
+    background: linear-gradient( var(--bg-gradient-1), var(--bg-gradient-2));
 }
 
 .contentWrap {
@@ -554,50 +557,68 @@ td {
 }
 
 /*---------------------
+    login-signup.html
+    
+----------------------*/
+#login-page {
+}
+.card-login {
+  width: 600px;
+  margin: 10rem auto;
+}
+
+/*---------------------
     Nav
 ---------------------*/
-nav {
-    background: var(--test-7);
-}
+nav { background: var(--test-7);}
 
 nav .container {
   color: var(--color-main);
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 1.25rem 0;
   font-size: 1.25rem;
-  position: relative;
 }
 
-#nav-logo {
-  height: 50px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-}
+#nav-logo { height: 50px;}
 
 .nav-list {
   display: flex;
+  align-items: center;
 }
 
-.nav-item {
-  margin-left: 0.75rem;
+.nav-list li {
   list-style-type: none;
-  font-size: 1.5rem;
+  margin-left: 0.75rem;
+  font-size: 1.25rem;
 }
 
-nav a {
+.nav-item a {
   color: var(--color-main);
   text-decoration: none;
   padding: 0.2rem;
 }
 
-nav a:hover {
-  color: var(--bg-color-accent);
+.nav-item a:hover {
   border-bottom: 2px solid var(--bg-color-accent);
 }
+
+.nav-btn {
+  border-radius: 10px;
+  background: var(--nav-btn);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: .5rem 1rem;
+  transition: transform .1s ease-in-out;
+  text-decoration: none;
+}
+
+.nav-btn:hover { background: var(--nav-btn-hover);}
+
+.nav-btn:active { transform: translateY(2px);}
 
 #mobile-menu {
   display: none;

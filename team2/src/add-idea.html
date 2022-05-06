@@ -24,15 +24,20 @@
                         <span></span>
                     </div>
                     <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="">Add Idea</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./get-idea.html">Get Idea</a>
-                        </li>
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./add-idea.html">Add Idea</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./get-idea.html">Get Idea</a>
+                            </li>
+                            <li>
+                                <a class="nav-btn" href="./login-signup.html">Sign In</a>
+                            </li>
+                        </ul>
                     </ul>
                 </div>
             </nav>
@@ -51,8 +56,8 @@
                                         <label for="event-name">Event name:</label>
                                     </h3>
 
-                                    <input type="text" name="event-name" id="event-name"
-                                        placeholder="'FCC Dallas Meetup'" />
+                                    <input autofocus type="text" name="event-name" id="event-name"
+                                        placeholder="'FCC Dallas Meetup'" required />
 
                                     <h3>
                                         <label for="event-url">Event URL:</label>
@@ -109,8 +114,8 @@
                     <table class="idea-table">
                         <tr>
                             <th>Event</th>
-                            <th>Event URL</th>
                             <th>Date</th>
+                            <th>Event URL</th>
                             <th>Label</th>
                         </tr>
 
