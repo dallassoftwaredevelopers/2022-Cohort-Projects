@@ -44,23 +44,24 @@
     <main id="login-page" class="container">
         <section class="card card-login">
             <form id="login" action="" method="">
+
                 <h2 class="text-center">Login</h2>
-                <div class="form-message form-message-error">Incorrect username/password</div>
-                
+
+                <div class="text-center form-message form-message-error"></div>
                 <div class="form-input-group">
-                    <input placeholder="Username or email" autofocus type="text" name="" id="">
+                    <input class="form-input" placeholder="Username or email" autofocus type="text" name="" id="">
                     <div class="form-message">This is an error message</div>
                 </div>
                 <div class="form-input-group">
-                    <input placeholder="Password" type="password" name="" id="">
-                    <div class="form-message">This is an error message</div>
+                    <input class="form-input" placeholder="Password" type="password" name="" id="">
+                    <div class="form-message"></div>
                 </div>
-                <button>Continue</button>
-                <p class="form-text">
+                <button type="submit" class="form-btn">Continue</button>
+                <p class="form-text text-center">
                     <a href="">Forgot your password?</a>
     
                 </p>
-                <p class="form-text">
+                <p class="form-text text-center">
                     <a id="linkCreateAccount" href="">Don't have an account? Create account</a>
                 </p>
             </form>
