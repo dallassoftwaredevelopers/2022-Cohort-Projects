@@ -54,24 +54,33 @@ mobileMenu.addEventListener('click', () => {
         document.querySelector(".popup-url").innerText = "";
         document.querySelector(".popup-date").innerText = "";
 
-        //validates user choice and provides feedback
-        if (!userData) {
-            popUpWindow.innerText = "You have no activities in this category";
+        if (!userData || !userData.ideas.length) {
+            popUpWindow.innerText = "You have no activities in your idea jar!";
             return
         }
-        //filters ideas based on chosen category
+
         let ideasInCategory = userData.ideas.filter(idea => idea.category == chosenCategory);
+
 
         if (chosenCategory == "other") {
             ideasInCategory = userData.ideas;
         }
 
-        generateRandomIdea(ideasInCategory);
+        //validates user choice and provides feedback
+        if (!ideasInCategory.length) {
+            popUpWindow.innerText = "You have no activities in this category";
+            return
+        }
+
+        //stores random idea data so it can be used to delete idea
+        let randomIdea = generateRandomIdea(ideasInCategory);
         
+        //button to remove idea from jar
+        document.querySelector(".removeIdea").addEventListener("click", () => removeIdeaFromJar(randomIdea));
     }
 }
 //generates a random index and uses it to pick a random idea
-function generateRandomIdea(ideasInCategory){
+function generateRandomIdea(ideasInCategory) {
     let randomIdeaIndex = Math.floor(Math.random() * ideasInCategory.length);
     let randomIdea = ideasInCategory[randomIdeaIndex];
 
@@ -83,6 +92,7 @@ function generateRandomIdea(ideasInCategory){
     if (randomIdea.date) {
         document.querySelector(".popup-date").innerText = `Date: ${randomIdea.date}`;
     }
+    return randomIdea
 }
 
 /* ----------------------------------------
@@ -130,7 +140,7 @@ function createRow(name, url, date, category) {
 
 function addIdea(event) {
     //event.preventDefault() // Stops form reload on submit
-
+    
     // Get radio input
     let checkedRadio = ''
     let radioElements = document.getElementsByName('category')
@@ -174,6 +184,7 @@ function addIdea(event) {
 
 // Runs once when add-idea page has loaded
 function startAddIdea() {
+
     console.log("loaded")
     // Import user data if previously submitted
     userData = JSON.parse(localStorage.getItem('myIdeaList'))
