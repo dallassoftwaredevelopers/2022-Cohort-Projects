@@ -5,7 +5,9 @@ using System.Security.Cryptography;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using WebAPI.Data;
+using System.Text;
 
 namespace WebAPI.Controllers
 {
@@ -26,9 +28,12 @@ namespace WebAPI.Controllers
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
+            var passwordHashString = Encoding.ASCII.GetString(passwordHash);
+            var passwordSaltString = Encoding.ASCII.GetString(passwordSalt);
+
             user.Username = request.Username;
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
+            user.PasswordHash = passwordHashString;
+            user.PasswordSalt = passwordSaltString;
 
             return Ok(user);
         }
@@ -45,7 +50,10 @@ namespace WebAPI.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<string>> Login (UserDTO request)
         {
-            if (user.Username != request.Username || !VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+            var passwordHashBytes = Encoding.ASCII.GetBytes(user.PasswordHash);
+            var passwordSaltBytes = Encoding.ASCII.GetBytes(user.PasswordSalt);
+
+            if (user.Username != request.Username || !VerifyPasswordHash(request.Password, passwordHashBytes, passwordSaltBytes))
                 return BadRequest("Wrong username/password combination.");
 
             // TODO:
@@ -58,11 +66,15 @@ namespace WebAPI.Controllers
 
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
-            using (var hmac = new HMACSHA512(user.PasswordSalt))
-            {
-                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            var passwordBytes = Encoding.ASCII.GetBytes(password);
+            var passwordHashBytes = Encoding.ASCII.GetBytes(user.PasswordHash);
+            var passwordSaltBytes = Encoding.ASCII.GetBytes(user.PasswordSalt);
 
-                return computedHash.SequenceEqual(passwordHash);
+            using (var hmac = new HMACSHA512(passwordSaltBytes))
+            {
+                var computedHash = hmac.ComputeHash(passwordBytes);
+
+                return computedHash.SequenceEqual(passwordHashBytes);
             }
         }
 

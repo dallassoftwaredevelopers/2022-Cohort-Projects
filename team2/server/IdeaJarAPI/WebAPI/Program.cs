@@ -4,14 +4,16 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
-using WebAPI.Repository.Postgres;
+using WebAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<IdeaJarContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetSection("ConnectionStrings:IdeaJarDB").Value);
+    options.EnableSensitiveDataLogging();
+    options.UseNpgsql(builder.Configuration.GetConnectionString("IdeaJarDB"));
 });
+
 
 // Add services to the container.
 
@@ -51,6 +53,15 @@ builder.Services.AddCors(c =>
 });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<IdeaJarContext>();
+    context.Database.EnsureCreated();
+    DbInitializer.Initialize(context);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

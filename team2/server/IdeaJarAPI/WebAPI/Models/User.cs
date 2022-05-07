@@ -12,8 +12,8 @@ namespace WebAPI.Models
         [Required]
         public string Email { get; set; }
         [Required]
-        public byte[] PasswordHash { get; set; }
+        public string PasswordHash { get; set; }
         [Required]
-        public byte[] PasswordSalt { get; set; }
+        public string PasswordSalt { get; set; }
     }
 }

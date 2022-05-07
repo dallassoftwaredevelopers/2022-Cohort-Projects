@@ -12,7 +12,7 @@ namespace WebAPI.Controllers
         {
             "Go to Theaters", "Stay Home", "Road Trip", "Any", "Indoors", "Outdoors"
         };
-        [Authorize]
+        //[Authorize]
         [HttpGet("GetAll")]
         public IEnumerable<string> Get() => Ideas.ToArray();
     }
