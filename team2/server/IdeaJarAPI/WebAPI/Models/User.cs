@@ -1,4 +1,4 @@
-﻿namespace WebAPI.Repository
+﻿namespace WebAPI.Models
 {
     public class User
     {
