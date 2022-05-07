@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "IdeaJarAPI\WebAPI\WebAPI.csproj", "{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0948FAD5-2533-4DFF-8F2A-5A0A3559FF5A}
+	EndGlobalSection
+EndGlobal
