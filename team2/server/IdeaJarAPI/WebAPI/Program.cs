@@ -1,10 +1,17 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
+using WebAPI.Repository.Postgres;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<IdeaJarContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetSection("ConnectionStrings:IdeaJarDB").Value);
+});
 
 // Add services to the container.
 

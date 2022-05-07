@@ -5,8 +5,6 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "IdeaJarAPI\WebAPI\WebAPI.csproj", "{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "IdeaJarAPI\Domain\Domain.csproj", "{8EF82D52-17EA-459B-90BC-5C9D76F0914C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE17D04A-27B1-48D3-B6AF-49020DEE1A56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EF82D52-17EA-459B-90BC-5C9D76F0914C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EF82D52-17EA-459B-90BC-5C9D76F0914C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EF82D52-17EA-459B-90BC-5C9D76F0914C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EF82D52-17EA-459B-90BC-5C9D76F0914C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
