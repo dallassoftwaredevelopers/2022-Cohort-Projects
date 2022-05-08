@@ -12,7 +12,6 @@ namespace WebAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.UseSerialColumns();
-            //modelBuilder.Entity<User>().ToTable("user");
         }
     }
 }

@@ -13,11 +13,17 @@ namespace WebAPI.Repositories
             _context = context;
         }
 
-        public Task GetById(int id)
+        public User CreateUser(User user)
         {
-            var user = _context.Users.Where(x => x.Id == id).FirstAsync();
+            _context.Users.Add(user);
+            _context.SaveChanges();
 
             return user;
+        }
+
+        public User GetByUsername(string username)
+        {
+            return _context.Users.Where(u => u.Username == username).First();
         }
     }
 }

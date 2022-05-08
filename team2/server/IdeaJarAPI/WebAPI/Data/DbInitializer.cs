@@ -1,4 +1,5 @@
-﻿using WebAPI.Models;
+﻿using System.Text;
+using WebAPI.Models;
 
 namespace WebAPI.Data
 {
@@ -11,9 +12,7 @@ namespace WebAPI.Data
 
             var users = new User[]
             {
-                //new User { Username = "bob", Email = "bob@email.com", PasswordHash = "123", PasswordSalt = "456" },
-                new User { Username = "sue", Email = "sue@email.com", PasswordHash = "1234", PasswordSalt = "4567" },
-                //new User { Username = "jane", Email = "jane@email.com", PasswordHash = "12345", PasswordSalt = "45678" },
+                new User { Username = "bob", Email = "bobcom", PasswordHash = Encoding.ASCII.GetBytes("123"), PasswordSalt = Encoding.ASCII.GetBytes("456") },
             };
 
             context.Users.AddRange(users);

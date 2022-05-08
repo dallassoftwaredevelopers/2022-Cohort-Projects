@@ -5,6 +5,8 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 using WebAPI.Data;
+using WebAPI.Repositories;
+using WebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,9 @@ builder.Services.AddDbContext<IdeaJarContext>(options =>
     options.EnableSensitiveDataLogging();
     options.UseNpgsql(builder.Configuration.GetConnectionString("IdeaJarDB"));
 });
+
+builder.Services.AddTransient<UsersRepository, UsersRepository>();
+builder.Services.AddTransient<AuthService, AuthService>();
 
 
 // Add services to the container.
