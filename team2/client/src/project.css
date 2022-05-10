@@ -71,6 +71,10 @@ html {
   flex: 1 0 auto;
 }
 
+.hide-element {
+  display: none;
+}
+
 .container {
   margin: 0 auto;
   width: 90%;
@@ -80,6 +84,7 @@ html {
 .split {
   display: flex;
   flex: wrap;
+  gap: 1rem;
 }
 
 .split > * { flex-basis: 100%;}
@@ -544,6 +549,17 @@ input[type="radio"]:focus {
     transform: translateY(2px);
 }
 
+.form-btn {
+  background-color: var(--nav-btn);
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.form-btn:hover {
+  background: var(--nav-btn-hover);
+}
+
 .idea-container {
     display: flex;
     flex-direction: column;
@@ -615,19 +631,10 @@ td {
 .form-message {
   margin: .5rem 0;
   font-size: .8rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-#login .form-btn {
-  background-color: var(--nav-btn);
-  color: #fff;
-  font-size: 1.2rem;
-  border: none;
-}
 
-#login .form-btn:hover {
-  background: var(--nav-btn-hover);
-}
 
 .form-text { margin-top: .75rem;}
 
@@ -638,12 +645,6 @@ td {
 
 .form-text a:hover {
   text-decoration: underline;
-}
-
-/* Swap forms*/
-
-.form-hidden {
-  display: none;
 }
 
 /*---------------------

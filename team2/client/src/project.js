@@ -97,24 +97,26 @@ function generateRandomIdea(ideasInCategory) {
 
 /*------------------------------------------
     Login/Sign up
+    - Defaults to Login form
+    - 
 ------------------------------------------*/
 function loginSignUp() {
     const loginForm = document.querySelector('#login')
     const createAccountForm = document.querySelector('#createAccount')
-
+    // In "Login", the link to go to "Create Account" form
     document.querySelector('#linkCreateAccount').addEventListener('click', (event) => {
         event.preventDefault()
-        loginForm.classList.add('form-hidden')
-        createAccountForm.classList.remove('form-hidden')
+        loginForm.classList.add('hide-element')
+        createAccountForm.classList.remove('hide-element')
     })
-
+    // In "Create Account", the link to go to "Login" form
     document.querySelector('#linkLogin').addEventListener('click', (event) => {
         event.preventDefault()
-        loginForm.classList.remove('form-hidden')
-        createAccountForm.classList.add('form-hidden')
+        loginForm.classList.remove('hide-element')
+        createAccountForm.classList.add('hide-element')
     })
     
-
+    // Submit from "Login" form
     loginForm.addEventListener('submit', event => {
         event.preventDefault();
         // Perform login
@@ -125,16 +127,44 @@ function loginSignUp() {
         // If failed
         setFormMessage(loginForm, "error", "Invalid username password combination")
     })
+
+    // Submit from "Create Account" form
+    createAccountForm.addEventListener('submit', (event)=> {
+        event.preventDefault()
+        const createUsername = createAccountForm.querySelector('#createUsername').value
+        const createPassword = createAccountForm.querySelector('#createPassword').value
+        const createPasswordConfirm = createAccountForm.querySelector('#createPasswordConfirm').value
+
+        // Valid pattern regex
+        let validUsername = /^[a-zA-Z0-9]+$/
+        let validPassword = /^[a-zA-Z0-9!@#$]+$/
+
+        if(createUsername.length < 3) {
+            setFormMessage(createAccountForm, "error", "Please enter a Username of 3 or more characters")
+        }
+        else if ( !validUsername.test(createUsername)) {
+            setFormMessage(createAccountForm, "error", "Invalid characters in Username")
+        }
+        else {
+            // Password validation, must be greater than 8 char with and 1 symbol
+
+            // Check passwords match
+            if(createPassword !== createPasswordConfirm)
+                setFormMessage(createAccountForm, "error", "Passwords do not match")
+            else {
+                setFormMessage(createAccountForm, "success", "Account created")
+                // Set Username and password
+            }
+        }
+    })
 }
 
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector('.form-message')
-
     messageElement.textContent = message
     messageElement.classList.remove('form-message-error', 'form-message-success')
     messageElement.classList.add(`form-message-${type}`)
 }
-
 /* ----------------------------------------
     Add-idea.html overview
     - On page load startAddIdea()
@@ -147,7 +177,6 @@ function setFormMessage(formElement, type, message) {
     - Validate form data before storing
     - Change date to dd-mm-yy
 --------------------------------------------*/
-
 let userData = []
 
 function displayIdeas() {
@@ -160,9 +189,7 @@ function displayIdeas() {
 }
 
 function createRow(name, url, date, category) {
-    console.log(name, url, date, category)
     let ideaTable = document.querySelector('.idea-table')
-
     let row = document.createElement('tr')
 
     let cell1 = row.insertCell(0)
@@ -196,7 +223,6 @@ function addIdea(event) {
     // Validate input 
     if (!document.getElementById('event-name').value || checkedRadio == "") {
         alert("Please enter both an event name and category")
-        console.log("first")
         return
     }
 
@@ -224,8 +250,6 @@ function addIdea(event) {
 
 // Runs once when add-idea page has loaded
 function startAddIdea() {
-
-    console.log("loaded")
     // Import user data if previously submitted
     userData = JSON.parse(localStorage.getItem('myIdeaList'))
 
