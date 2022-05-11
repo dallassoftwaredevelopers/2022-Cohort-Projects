@@ -5,7 +5,7 @@ namespace WebAPI.Data
 {
     public class DbInitializer
     {
-        public static void Initialize(IdeaJarContext context)
+        public static void Initialize(ApplicationDbContext context)
         {
             // Look for any users
             if (context.Users.Any()) return;

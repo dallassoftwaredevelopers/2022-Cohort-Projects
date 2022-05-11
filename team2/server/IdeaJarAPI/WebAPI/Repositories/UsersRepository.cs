@@ -6,9 +6,9 @@ namespace WebAPI.Repositories
 {
     public class UsersRepository
     {
-        private readonly IdeaJarContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UsersRepository(IdeaJarContext context)
+        public UsersRepository(ApplicationDbContext context)
         {
             _context = context;
         }
