@@ -66,7 +66,9 @@ body {
   background: linear-gradient(to bottom right , var(--bg-gradient-2), var(--bg-gradient-1) );
 */
 
-main { margin: 4rem 0;}
+main { margin: 4rem 0;
+  padding-top: 4rem;
+}
 
 img { max-width: 100%;}
 
@@ -156,13 +158,19 @@ img { max-width: 100%;}
   margin-top: 10rem;
 }
 
+.idea-jar-ref {
+  color: #00f5d4;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .section-img {
   
 }
 
 .section-space {
   display: flex;
-  
+  align-items: center;
   flex-direction: column;
 }
 
@@ -170,6 +178,7 @@ img { max-width: 100%;}
   color: #161b33;
   font-size: 4rem;
   margin: 1.75rem 0;
+  text-align: left;
 }
 
 .section-text {
@@ -183,27 +192,8 @@ img { max-width: 100%;}
   flex-direction: column;
 }
 
-.custom-shape-divider-top-1652305574 {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1652305574 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 75px;
-}
-
-.custom-shape-divider-top-1652305574 .shape-fill {
-  fill: var(--bg-nav);
-}
-/**/
-.custom-shape-divider-bottom-1652305974 {
+/* Wave */
+.wave-top {
   position: absolute;
   
   bottom: 0;
@@ -214,18 +204,37 @@ img { max-width: 100%;}
   transform: rotate(180deg);
 }
 
-.custom-shape-divider-bottom-1652305974 svg {
+.wave-top svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
   height: 75px;
 }
 
-.custom-shape-divider-bottom-1652305974 .shape-fill {
+.wave-top .shape-fill {
   fill: var(--bg-nav);
 }
 
-/**/
+.wave-bottom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 75px;
+}
+
+.wave-bottom .shape-fill {
+  fill: var(--bg-nav);
+}
+/* END of wave*/
 
 .contentWrap {
   flex: 1 0 auto;

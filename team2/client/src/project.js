@@ -28,6 +28,19 @@ window.onscroll = () => {
     }
 }
 
+/*----------------------------
+    Logged in behaviours
+    - Still in testing
+----------------------------*/
+
+let isLoggedIn = false
+
+console.log(isLoggedIn)
+
+if(isLoggedIn === true) {
+    console.log(navMenu.children)
+}
+
 /*---------------------------------- 
     Get-idea.html
 ----------------------------------*/
@@ -133,9 +146,9 @@ function loginSignUp() {
 
         // If sucess
         setFormMessage(loginForm, "success", "You're logged in")
-
+        isLoggedIn = true
         // If failed
-        setFormMessage(loginForm, "error", "Invalid username password combination")
+        //setFormMessage(loginForm, "error", "Invalid username password combination")
     })
 
     // Submit from "Create Account" form
