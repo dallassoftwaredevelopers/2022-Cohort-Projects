@@ -11,17 +11,27 @@
 --------------------------*/
 const mobileMenu = document.getElementById('mobile-menu')
 const navMenu = document.querySelector('.nav-list')
+const nav = document.querySelector('nav')
 
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active')
     navMenu.classList.toggle('active')
 })
 
+// Add background to Navbar on scroll
+window.onscroll = () => {
+    if(document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        nav.style.background = "rgba(123, 136, 209, .9)"
+    }
+    else {
+        nav.style.background = "none"
+    }
+}
+
 /*---------------------------------- 
     Get-idea.html
 ----------------------------------*/
     function startGetIdea() {
-
 
     /* modal on get idea */
     $(".open").on("click", function () {
