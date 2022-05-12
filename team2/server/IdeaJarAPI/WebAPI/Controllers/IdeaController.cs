@@ -14,7 +14,6 @@ namespace WebAPI.Controllers
             "Go to Theaters", "Stay Home", "Road Trip", "Any", "Indoors", "Outdoors"
         };
         [HttpGet]
-        [Authorize]
         public IEnumerable<string> Get()
         {
             return Ideas.ToArray();
