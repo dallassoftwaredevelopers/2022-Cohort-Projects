@@ -28,10 +28,10 @@
                         <li class="nav-item">
                             <a href="./index.html">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item hide-element">
                             <a href="./src/add-idea.html">Add Idea</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item hide-element">
                             <a href="./src/get-idea.html">Get Idea</a>
                         </li>
                         <li>
@@ -42,37 +42,92 @@
             </nav>
         </header>
         
+        <!--Main content-->
         <main>
-
-            <section class="containerMain">
-
-                <div class="btnContainerMain">
-                    <a class="putIdeaBtnMain stay-home" href="./src/add-idea.html">Put Idea In Jar</a>
-                    <a class="getIdeaBtnMain indoor" href="./src/get-idea.html">Take Idea From Jar</a>
+    
+            <section id="home-first">
+                <div class="container">
+                    <div class="split">
+                        <div class="section-space">
+                            <h1 class="section-header">
+                                What to do?
+                            </h1>
+                            <p class="section-text">
+                                In a busy world of possibilities it can be hard to choose. Let <span class="idea-jar-ref">Idea Jar</span> help! 
+                            </p>
+                        </div>
+                        <div class="section-img">
+                            <img src="./src/img/couple-sofa-icon.png" alt="">
+                        </div>
+                    </div>
                 </div>
-
-                <div class="containerOverview" id="overview">
-                    <p>Do you have a difficulty deciding on a resturant or what you want to do when you are bored? Let
-                        Idea Jar help!</p>
-                    <p>Idea Jar keeps track of resturants you want to try and fun activities you want to do.</p>
-                    <section class="containerExplain">
-                        <section>
-                            <div class="putIdeaExplain stay-home">PUT IDEA IN JAR</div>
-                            <p>Use this function to add resturants and fun activities when you learn about them.</p>
-                        </section>
-                        <section>
-                            <div class="takeIdeaExplain indoor">TAKE IDEA FROM JAR</div>
-                            <p>Select this function when you are ready for IDEA JAR to randomly select from the ideas
-                                you've entered, making the decision for you. </p>
-                        </section>
-                    </section>
+                <div class="wave-top">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                    </svg>
                 </div>
-
             </section>
-
+    
+            <section id="home-second">
+                
+                <div class="container">
+                    <div class="split">
+                        <div class="section-img">
+                            <img src="./src/img/cal-couple-icon.png" alt="">
+                        </div>
+                        <div class="section-space">
+                            <h1 class="section-header">
+                                Explore your world
+                            </h1>
+                            <p class="section-text">
+                                <span class="idea-jar-ref">Idea Jar</span> allows you to keep track of resturants you want to try and fun activities you'd like to do. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Bottom SVG wave-->
+                <div class="wave-bottom">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                    </svg>
+                </div>                
+            </section>
+    
+            <section id="home-third">
+                <div class="container">
+                    <div class="split">
+                        <div class="section-space">
+                            <h1 class="section-header">
+                                Try Idea Jar out!
+                            </h1>
+                            <p class="section-text">
+                                <section class="containerExplain">
+                                    <section>
+                                        <div class="putIdeaExplain outdoor">PUT IDEA IN JAR</div>
+                                        <p>Add resturants and fun activities when you learn about them.</p>
+                                    </section>
+                                    <section>
+                                        <div class="takeIdeaExplain indoor">TAKE IDEA FROM JAR</div>
+                                        <p>Have <span class="idea-jar-ref">Idea Jar</span> randomly select from the ideas
+                                            you've entered</p>
+                                    </section>
+                                </section>
+                            </p>
+                            <button class="btn stay-home" onclick="location.href='./src/login-signup.html'">
+                                Sign Up
+                            </button>
+                        </div>
+                        <div class="section-img">
+                            <img src="./src/img/jar_2.png" alt="The Idea Jar">
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+    
         </main>
     </div>
-
+    
     <!--Footer-->
     <footer>
         <div class="containerFooter">

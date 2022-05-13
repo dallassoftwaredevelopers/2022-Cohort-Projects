@@ -11,17 +11,40 @@
 --------------------------*/
 const mobileMenu = document.getElementById('mobile-menu')
 const navMenu = document.querySelector('.nav-list')
+const nav = document.querySelector('nav')
 
 mobileMenu.addEventListener('click', () => {
     mobileMenu.classList.toggle('active')
     navMenu.classList.toggle('active')
 })
 
+// Add background to Navbar on scroll
+window.onscroll = () => {
+    if(document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        nav.style.background = "rgba(123, 136, 209, .9)"
+    }
+    else {
+        nav.style.background = "none"
+    }
+}
+
+/*----------------------------
+    Logged in behaviours
+    - Still in testing
+----------------------------*/
+
+let isLoggedIn = false
+
+console.log(isLoggedIn)
+
+if(isLoggedIn === true) {
+    console.log(navMenu.children)
+}
+
 /*---------------------------------- 
     Get-idea.html
 ----------------------------------*/
     function startGetIdea() {
-
 
     /* modal on get idea */
     $(".open").on("click", function () {
@@ -123,9 +146,9 @@ function loginSignUp() {
 
         // If sucess
         setFormMessage(loginForm, "success", "You're logged in")
-
+        isLoggedIn = true
         // If failed
-        setFormMessage(loginForm, "error", "Invalid username password combination")
+        //setFormMessage(loginForm, "error", "Invalid username password combination")
     })
 
     // Submit from "Create Account" form
