@@ -11,8 +11,8 @@ using WebAPI.Data;
 namespace WebAPI.Migrations
 {
     [DbContext(typeof(IdeaJarContext))]
-    [Migration("20220507142017_UpdateUserPasswordProps")]
-    partial class UpdateUserPasswordProps
+    [Migration("20220507163405_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,10 @@ namespace WebAPI.Migrations
             modelBuilder.Entity("WebAPI.Models.User", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .IsRequired()

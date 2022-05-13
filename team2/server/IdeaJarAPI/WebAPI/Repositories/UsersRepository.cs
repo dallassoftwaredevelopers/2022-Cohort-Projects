@@ -6,18 +6,24 @@ namespace WebAPI.Repositories
 {
     public class UsersRepository
     {
-        private readonly IdeaJarContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UsersRepository(IdeaJarContext context)
+        public UsersRepository(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public Task GetById(int id)
+        public User CreateUser(User user)
         {
-            var user = _context.Users.Where(x => x.Id == id).FirstAsync();
+            _context.Users.Add(user);
+            _context.SaveChanges();
 
             return user;
+        }
+
+        public User GetByUsername(string username)
+        {
+            return _context.Users.Where(u => u.Username == username).First();
         }
     }
 }
