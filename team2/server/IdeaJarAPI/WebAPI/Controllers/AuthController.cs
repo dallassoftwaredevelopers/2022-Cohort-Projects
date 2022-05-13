@@ -5,100 +5,97 @@ using System.Security.Cryptography;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.EntityFrameworkCore;
+using WebAPI.Data;
 using System.Text;
-using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {
-    [Route("Api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IUserService _userService;
-        private readonly IEmailService _emailService;
+        public static User user = new User();
         private readonly IConfiguration _configuration;
 
-
-        public AuthController(IUserService userService, IEmailService emailService, IConfiguration configuration)
+        public AuthController(IConfiguration configuration)
         {
-            _userService = userService;
-            _emailService = emailService;
-            _configuration = configuration;
+            this._configuration = configuration;
         }
 
-
-        [HttpPost("Register")]
-        public async Task<IActionResult> Register([FromBody]RegisterDTO registrationDTO)
+        [HttpPost("register")]
+        public async Task<ActionResult<User>> Register(UserDTO request)
         {
-            if (!ModelState.IsValid)
-                return BadRequest("Some properties are not valid");
+            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
 
-            var output = await _userService.RegisterUser(registrationDTO);
+            var passwordHashString = Encoding.ASCII.GetString(passwordHash);
+            var passwordSaltString = Encoding.ASCII.GetString(passwordSalt);
 
-            if (output.IsSuccess)
-                return Ok(output);
+            user.Username = request.Username;
+            user.PasswordHash = passwordHashString;
+            user.PasswordSalt = passwordSaltString;
 
-            return BadRequest(output);
+            return Ok(user);
         }
 
-        [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] LoginDTO loginDTO)
+        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
-            if (!ModelState.IsValid)
-                return BadRequest("Some properties are not valid");
-
-            var output = await _userService.LoginUser(loginDTO);
-
-            if (!output.IsSuccess)
-                return BadRequest(output);
-
-            await _emailService.SendEmail(
-                toEmail: output.Email, 
-                subject: "New Login Notification", 
-                context: $"<h3>New Login</h3> <p>New login to your account noticed at {DateTime.Now}.</p>");
-
-            return Ok(output);
+            using (var hmac = new HMACSHA512())
+            {
+                passwordSalt = hmac.Key;
+                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            }
         }
 
-        [HttpGet("ConfirmEmail")]
-        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        [HttpPost("login")]
+        public async Task<ActionResult<string>> Login (UserDTO request)
         {
-            if (string.IsNullOrWhiteSpace(userId) || string.IsNullOrWhiteSpace(token))
-                return NotFound();
+            var passwordHashBytes = Encoding.ASCII.GetBytes(user.PasswordHash);
+            var passwordSaltBytes = Encoding.ASCII.GetBytes(user.PasswordSalt);
 
-            var result = await _userService.ConfirmEmail(userId, token);
+            if (user.Username != request.Username || !VerifyPasswordHash(request.Password, passwordHashBytes, passwordSaltBytes))
+                return BadRequest("Wrong username/password combination.");
 
-            if (!result.IsSuccess)
-                return BadRequest(result);
+            // TODO:
+            //if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+            //    return BadRequest("Wrong password.");
 
-            return Redirect($"{_configuration["AppUrl"]}/ConfirmEmail.html");
+            string token = CreateToken(user);
+            return Ok(token);
         }
 
-        [HttpPost("ForgotPassword")]
-        public async Task<IActionResult> ForgotPassword(string email)
+        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
-            if (string.IsNullOrEmpty(email))
-                return NotFound();
+            var passwordBytes = Encoding.ASCII.GetBytes(password);
+            var passwordHashBytes = Encoding.ASCII.GetBytes(user.PasswordHash);
+            var passwordSaltBytes = Encoding.ASCII.GetBytes(user.PasswordSalt);
 
-            var result = await _userService.ForgotPassword(email);
+            using (var hmac = new HMACSHA512(passwordSaltBytes))
+            {
+                var computedHash = hmac.ComputeHash(passwordBytes);
 
-            if (!result.IsSuccess)
-                return BadRequest(result);
-
-            return Ok(result);
+                return computedHash.SequenceEqual(passwordHashBytes);
+            }
         }
 
-        [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword([FromForm]ResetPasswordViewModel viewModel)
+        private string CreateToken(User user)
         {
-            if (!ModelState.IsValid)
-                return BadRequest("Some properties are not valid");
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.Username)
+            };
 
-            var output = await _userService.ResetPassword(viewModel);
-            if (!output.IsSuccess)
-                return BadRequest(output);
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
+            var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
-            return Ok(output);
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Now.AddDays(1),
+                signingCredentials: credential);
+
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return jwt;
         }
     }
 }
