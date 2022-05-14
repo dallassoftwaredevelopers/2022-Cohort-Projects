@@ -50,14 +50,14 @@ namespace WebAPI.Services
                 var encodedEmailToken = Encoding.UTF8.GetBytes(confirmEmailToken);
                 var validEmailToken = WebEncoders.Base64UrlEncode(encodedEmailToken);
 
-                string url = $"{_configuration["AppUrl"]}/Api/Auth/ConfirmEmail?userid={identityUser.Id}&token={validEmailToken}";
+                string url = $"{_configuration["APP_URL"]}/Api/Auth/ConfirmEmail?userid={identityUser.Id}&token={validEmailToken}";
                 await _emailService.SendEmail(identityUser.Email, "Confirm your email",
                     $"<h1>Welcome to the Idea Jar App</h1><p>Please confirm your email by <a href='{url}'>Clicking here</a></p>");
 
                 return new UserManagerResponseDTO
                     {
-                        Message = "User created successfully!",
-                        IsSuccess = true
+                        Message = $"User created successfully!",
+                        IsSuccess = true,
                     };
                 }
                 
@@ -164,7 +164,7 @@ namespace WebAPI.Services
             var encodedToken = Encoding.UTF8.GetBytes(token);
             var validToken = WebEncoders.Base64UrlEncode(encodedToken);
 
-            var url = $"{_configuration["AppUrl"]}/ResetPassword?email={email}&token={validToken}";
+            var url = $"{_configuration["APP_URL"]}/ResetPassword?email={email}&token={validToken}";
 
             await _emailService.SendEmail(email, "Reset Password",
                 "<h1>Follow the instructions to reset your password</h1>" +
