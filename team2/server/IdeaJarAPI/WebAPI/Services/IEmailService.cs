@@ -18,8 +18,7 @@ namespace WebAPI.Services
 
         public async Task SendEmail(string toEmail,string subject, string content)
         {
-            //var apiKey = Environment.GetEnvironmentVariable("NAME_OF_THE_ENVIRONMENT_VARIABLE_FOR_YOUR_SENDGRID_KEY");
-            var apiKey = _configuration["SendGrid:ApiKey"];
+            var apiKey = _configuration["SENDGRID_API_KEY"];
             var client = new SendGridClient(apiKey);
 
             var from = new EmailAddress("ideajar.app@gmail.com", "Idea Jar Support");
