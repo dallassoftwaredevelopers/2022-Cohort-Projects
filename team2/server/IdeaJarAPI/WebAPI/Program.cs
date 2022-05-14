@@ -9,11 +9,13 @@ using WebAPI.Models;
 using WebAPI.Repositories;
 using WebAPI.Services;
 
+DotNetEnv.Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("IdeaJarDB"));
+    options.UseNpgsql(builder.Configuration["IDEAJARDB_CONNECTION_STRING"]);
 });
 
 builder.Services
