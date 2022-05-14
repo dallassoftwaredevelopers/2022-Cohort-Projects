@@ -39,11 +39,11 @@ builder.Services.AddAuthentication(auth =>
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value)),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["APP_SETTINGS_TOKEN"])),
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidAudience = builder.Configuration["AppSettings:Audience"],
-        ValidIssuer = builder.Configuration["AppSettings:Issuer"],
+        ValidAudience = builder.Configuration["APP_SETTINGS_AUDIENCE"],
+        ValidIssuer = builder.Configuration["APP_SETTINGS_ISSUER"],
         RequireExpirationTime = true
     };
 });
