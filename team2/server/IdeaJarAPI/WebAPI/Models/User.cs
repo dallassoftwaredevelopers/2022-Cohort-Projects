@@ -5,16 +5,15 @@ namespace WebAPI.Models
 {
     public class User
     {
-        [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         [Required]
         public string Username { get; set; }
-        [Required, EmailAddress]
+        [Required]
         public string Email { get; set; }
         [Required]
-        public byte[] PasswordHash { get; set; }
+        public string PasswordHash { get; set; }
         [Required]
-        public byte[] PasswordSalt { get; set; }
+        public string PasswordSalt { get; set; }
     }
 }

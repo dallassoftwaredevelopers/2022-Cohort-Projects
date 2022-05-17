@@ -1,9 +1,4 @@
-﻿using Mailjet.Client;
-using Mailjet.Client.Resources;
-using Newtonsoft.Json.Linq;
-using RestSharp;
-using RestSharp.Authenticators;
-using SendGrid;
+﻿using SendGrid;
 using SendGrid.Helpers.Mail;
 
 namespace WebAPI.Services
@@ -30,4 +25,3 @@ namespace WebAPI.Services
         }
     }
 }
-

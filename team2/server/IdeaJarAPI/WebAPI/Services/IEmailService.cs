@@ -1,6 +1,4 @@
-﻿using RestSharp;
-
-namespace WebAPI.Services
+﻿namespace WebAPI.Services
 {
     public interface IEmailService
     {

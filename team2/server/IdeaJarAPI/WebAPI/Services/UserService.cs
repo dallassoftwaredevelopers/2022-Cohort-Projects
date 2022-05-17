@@ -1,14 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.IdentityModel.Tokens;
-using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Text;
 using WebAPI.DTOs;
 using WebAPI.Models;
-using WebAPI.Repositories;
 
 namespace WebAPI.Services
 {
@@ -55,12 +52,12 @@ namespace WebAPI.Services
                     $"<h1>Welcome to the Idea Jar App</h1><p>Please confirm your email by <a href='{url}'>Clicking here</a></p>");
 
                 return new UserManagerResponseDTO
-                    {
-                        Message = $"User created successfully!",
-                        IsSuccess = true,
-                    };
-                }
-                
+                {
+                    Message = $"User created successfully!",
+                    IsSuccess = true,
+                };
+            }
+
 
             return new UserManagerResponseDTO
             {
@@ -96,12 +93,12 @@ namespace WebAPI.Services
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["AppSettings:Token"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["APP_SETTINGS_TOKEN"]));
             var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: _configuration["AppSettings:Issuer"],
-                audience: _configuration["AppSettings:Audience"],
+                issuer: _configuration["APP_SETTINGS_ISSUER"],
+                audience: _configuration["APP_SETTINGS_AUDIENCE"],
                 claims: claims,
                 expires: DateTime.Now.AddDays(14),
                 signingCredentials: credential
@@ -129,7 +126,7 @@ namespace WebAPI.Services
                     Message = "User not found",
 
                 };
-           
+
             var decodedToken = WebEncoders.Base64UrlDecode(token);
             string normalToken = Encoding.UTF8.GetString(decodedToken);
 
