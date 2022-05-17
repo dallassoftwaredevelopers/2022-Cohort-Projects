@@ -9,11 +9,13 @@ using WebAPI.Models;
 using WebAPI.Repositories;
 using WebAPI.Services;
 
+DotNetEnv.Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("IdeaJarDB"));
+    options.UseNpgsql(builder.Configuration["IDEAJARDB_CONNECTION_STRING"]);
 });
 
 builder.Services
@@ -37,11 +39,11 @@ builder.Services.AddAuthentication(auth =>
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value)),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["APP_SETTINGS_TOKEN"])),
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidAudience = builder.Configuration["AppSettings:Audience"],
-        ValidIssuer = builder.Configuration["AppSettings:Issuer"],
+        ValidAudience = builder.Configuration["APP_SETTINGS_AUDIENCE"],
+        ValidIssuer = builder.Configuration["APP_SETTINGS_ISSUER"],
         RequireExpirationTime = true
     };
 });
@@ -75,14 +77,14 @@ builder.Services.AddCors(c =>
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
 
-    var context = services.GetRequiredService<ApplicationDbContext>();
-    context.Database.EnsureCreated();
-    //DbInitializer.Initialize(context);
-}
+//    var context = services.GetRequiredService<ApplicationDbContext>();
+//    context.Database.EnsureCreated();
+//    //DbInitializer.Initialize(context);
+//}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

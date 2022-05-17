@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register([FromBody]RegisterDTO registrationDTO)
+        public async Task<IActionResult> Register([FromBody] RegisterDTO registrationDTO)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Some properties are not valid");
@@ -53,8 +53,8 @@ namespace WebAPI.Controllers
                 return BadRequest(output);
 
             await _emailService.SendEmail(
-                toEmail: output.Email, 
-                subject: "New Login Notification", 
+                toEmail: output.Email,
+                subject: "New Login Notification",
                 context: $"<h3>New Login</h3> <p>New login to your account noticed at {DateTime.Now}.</p>");
 
             return Ok(output);
@@ -71,7 +71,7 @@ namespace WebAPI.Controllers
             if (!result.IsSuccess)
                 return BadRequest(result);
 
-            return Redirect($"{_configuration["AppUrl"]}/ConfirmEmail.html");
+            return Redirect($"{_configuration["APP_URL"]}/ConfirmEmail.html");
         }
 
         [HttpPost("ForgotPassword")]
@@ -89,7 +89,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("ResetPassword")]
-        public async Task<IActionResult> ResetPassword([FromForm]ResetPasswordViewModel viewModel)
+        public async Task<IActionResult> ResetPassword([FromForm] ResetPasswordViewModel viewModel)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Some properties are not valid");
