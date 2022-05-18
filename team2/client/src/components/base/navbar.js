@@ -12,7 +12,7 @@ class Navigation extends HTMLElement {
         <header>
             <nav>
                 <div class="container">
-                    <img id="nav-logo" src="./img/logo.png" alt="Idea jar logo">
+                    <img id="nav-logo" src="../img/logo.png" alt="Idea jar logo">
                     <div id="mobile-menu">
                         <span></span>
                         <span></span>
