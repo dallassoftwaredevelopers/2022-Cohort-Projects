@@ -20,6 +20,7 @@ const components = [
     "content/index/index.js",
     "content/get-idea/index.js",
     "content/add-idea/index.js",
+    "content/login-signup/index.js",
 
     // Components
     "base/head.js",
