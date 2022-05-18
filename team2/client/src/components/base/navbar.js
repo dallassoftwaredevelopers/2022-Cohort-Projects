@@ -12,7 +12,7 @@ class Navigation extends HTMLElement {
         <header>
             <nav>
                 <div class="container">
-                    <img id="nav-logo" src="./src/img/logo.png" alt="Idea jar logo">
+                    <img id="nav-logo" src="./img/logo.png" alt="Idea jar logo">
                     <div id="mobile-menu">
                         <span></span>
                         <span></span>
@@ -23,13 +23,13 @@ class Navigation extends HTMLElement {
                             <a href="./index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./src/add-idea.html">Add Idea</a>
+                            <a href="./add-idea.html">Add Idea</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./src/get-idea.html">Get Idea</a>
+                            <a href="./get-idea.html">Get Idea</a>
                         </li>
                         <li>
-                            <a class="nav-btn" href="./src/login-signup.html">Sign In</a>
+                            <a class="nav-btn" href="./login-signup.html">Sign In</a>
                         </li>
                     </ul>
                 </div>

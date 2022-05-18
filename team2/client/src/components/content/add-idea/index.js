@@ -1,50 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+class AddIdeaPage extends HTMLElement {
+    constructor() {
+        super();
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idea Jar</title>
-    <link rel="stylesheet" href="./project.css">
-    <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
-    <script defer src="./project.js"></script>
-</head>
+    connectedCallback() {
+        this.render();
+    }
 
-<body onload="startAddIdea()">
-    <div class="contentWrap">
-        <header>
-            <!--Nav-->
-            <nav>
-                <div class="container">
-                    <img id="nav-logo" src="./img/logo_2.png" alt="Idea jar logo">
-                    <div id="mobile-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ul class="nav-list">
-                        <ul class="nav-list">
-                            <li class="nav-item">
-                                <a href="../index.html">Home</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a href="./add-idea.html">Add Idea</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./get-idea.html">Get Idea</a>
-                            </li>
-                            <li>
-                                <a class="nav-btn" href="./login-signup.html">Sign In</a>
-                            </li>
-                        </ul>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <main id="add-item">
+    render() {
+        this.innerHTML = `
+        <main id="add-item" onload="startAddIdea()>
             <div class="container">
                 <!--Form and image-->
                 <section class="split idea-form">
@@ -104,7 +69,7 @@
                     </div>
 
                     <div class="img-container">
-                        <img class="jar" src="./img/jar_2.png" alt="Idea jar">
+                        <img class="jar" src="../img/jar_2.png" alt="Idea jar">
                     </div>
                 </section>
 
@@ -126,37 +91,9 @@
 
             </div>
         </main>
-    </div>
-    <!--Footer-->
-    <footer>
-        <div class="containerFooter">
-            <div>
-                <h3 class="text-center">
-                    <a href="./team-2b/team-page.html">
-                        The Unstoppable Team 2B
-                    </a>
-                </h3>
-                <p class="text-center names">
-                    Ariel, Jennifer, <br> Michelle, John
-                </p>
-            </div>
+        `;
+    }
+}
 
-            <div>
-                <h3 class="text-center">
-                    Check out our work
-                </h3>
-                <div class=" text-center media-tray">
+customElements.define('x-add-idea-page', AddIdeaPage);
 
-                    <a target="_blank" href="https://fcc-dallas.com/">
-                        <i class="fab fa-brands fa-free-code-camp fa-2x"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/jgvargas/2022-Cohort-Projects">
-                        <i class="fab fa-brands fa-github fa-2x" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>

@@ -15,9 +15,11 @@ class Head extends HTMLElement {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!--Font awesome cdn-->
             <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
-            <link rel="stylesheet" href="src/project.css">
-            <script defer src="./src/project.js"></script>
-
+            <!-- google font -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Cambay:wght@400;700&family=Handlee&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="../project.css">
             <title>Team 2/B</title>
         </head>
         `;

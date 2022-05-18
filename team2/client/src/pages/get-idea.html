@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <x-head></x-head>
-<body>
+<body onload="startGetIdea()">
     <!-- Navbar -->
     <x-navbar></x-navbar>
 
     <!-- Page content -->
     <div class="contentWrap">
-        <x-index-page></x-index-page>
+        <x-get-idea-page></x-get-idea-page>
     </div>
     
     <!--Footer-->
     <x-footer></x-footer>
 </body>
-<script defer src="./src/components/index.js"></script>
+<script src="../lib/pageLoader.js"></script>
 </html>
