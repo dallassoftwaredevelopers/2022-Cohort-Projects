@@ -14,7 +14,6 @@ function loadScript(location, fileName) {
 }
 
 const components = [
-    // Components
     "base/head.js",
     "base/navbar.js",
     "base/footer.js"
