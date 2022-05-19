@@ -1,9 +1,8 @@
-
 function addPageToComponentsArray() {
-    var splitPath = window.location.pathname.split("/");
-    var page = splitPath[splitPath.length - 1].split(".")[0];
+    var path = window.location.pathname
+    var pageName = path.substring(0, path.lastIndexOf(".html")).substring(path.lastIndexOf("/")+1);
     
-    components.push(`content/${page}/${page}.js`);
+    components.push(`content/${pageName}/${pageName}.js`);
 }
 
 function loadScript(location, fileName) {
@@ -21,7 +20,7 @@ const components = [
     "base/footer.js"
 ];
 
-
+// Add the current page to the components array
 addPageToComponentsArray();
 // Load components
 components.map(file => loadScript("../components/", file));
