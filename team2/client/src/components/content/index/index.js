@@ -37,22 +37,31 @@ class IndexPage extends HTMLElement {
                 </div>
             </section>
     
+            <!--Second-->
             <section id="home-second">
                 
-                <div class="container">
 
-                        <div class="section-img">
-                            <img class="couplesImg" src="../img/cal-couple-icon.png" alt="">
-                        </div>
-                        <div class="section-space">
-                            <h1 class="section-header">
-                                Explore your world
-                            </h1>
-                            <p class="section-text">
-                                <span class="idea-jar-ref">Idea Jar</span> allows you to keep track of resturants you want to try and fun activities you'd like to do. 
-                            </p>
-                        </div>
-
+                <div class="container split alt-split">
+                    <div class="polaroid-space">
+                        <figure class="polaroid">
+                            <img class="" src="./src/img/people-sitting-park.jpg" alt="">
+                            <figcaption>Park Festival</figcaption>
+                        </figure>
+                        <figure class="polaroid">
+                            <img class="" src="./src/img/people-on-river.jpg" alt="">
+                            <figcaption>Sandy Creek</figcaption>
+                        </figure>
+                        
+                    </div>
+                        
+                    <div class="section-space">
+                        <h1 class="section-header">
+                            Explore your world
+                        </h1>
+                        <p class="section-text">
+                            <span class="idea-jar-ref">Idea Jar</span> allows you to keep track of resturants you want to try and fun activities you'd like to do. 
+                        </p>
+                    </div>
                 </div>
                 <!--Bottom SVG wave-->
                 <div class="wave-bottom">
