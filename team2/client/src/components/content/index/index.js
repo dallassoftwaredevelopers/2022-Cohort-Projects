@@ -25,7 +25,7 @@ class IndexPage extends HTMLElement {
                         </div>
                         
                         <div class="section-img">
-                            <!-- <img src="./src/img/polaroid.png" alt=""> -->
+                            <!-- <img src="./img/polaroid.png" alt=""> -->
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@ class IndexPage extends HTMLElement {
                 <div class="container">
 
                         <div class="section-img">
-                            <img class="couplesImg" src="./src/img/cal-couple-icon.png" alt="">
+                            <img class="couplesImg" src="../img/cal-couple-icon.png" alt="">
                         </div>
                         <div class="section-space">
                             <h1 class="section-header">
@@ -85,13 +85,13 @@ class IndexPage extends HTMLElement {
                                     </section>
                                 </section>
                             </p>
-                            <button class="btn stay-home" onclick="location.href='./src/login-signup.html'">
+                            <button class="btn stay-home" onclick="location.href='./login-signup.html'">
                                 Sign Up
                             </button>
                         </div>
                         
                         <div class="section-img">
-                            <img src="./src/img/jar_2.png" alt="The Idea Jar">
+                            <img src="../img/jar_2.png" alt="The Idea Jar">
                         </div>
 
                 </div>
