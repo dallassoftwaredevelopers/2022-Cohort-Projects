@@ -44,11 +44,11 @@ class IndexPage extends HTMLElement {
                 <div class="container split alt-split">
                     <div class="polaroid-space">
                         <figure class="polaroid">
-                            <img class="" src="./src/img/people-sitting-park.jpg" alt="">
+                            <img class="" src="../img/people-sitting-park.jpg" alt="">
                             <figcaption>Park Festival</figcaption>
                         </figure>
                         <figure class="polaroid">
-                            <img class="" src="./src/img/people-on-river.jpg" alt="">
+                            <img class="" src="../img/people-on-river.jpg" alt="">
                             <figcaption>Sandy Creek</figcaption>
                         </figure>
                         

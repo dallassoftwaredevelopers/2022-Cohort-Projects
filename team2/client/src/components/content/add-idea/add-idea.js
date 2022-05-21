@@ -9,7 +9,7 @@ class AddIdeaPage extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <main id="add-item" onload="startAddIdea()>
+        <main id="add-item" onload="startAddIdea()">
             <div class="container">
                 <!--Form and image-->
                 <section class="split idea-form">
