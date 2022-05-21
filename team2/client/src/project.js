@@ -44,64 +44,64 @@ if(isLoggedIn === true) {
 /*---------------------------------- 
     Get-idea.html
 ----------------------------------*/
-    function startGetIdea() {
+//     function startGetIdea() {
 
-    /* modal on get idea */
-    $(".open").on("click", function () {
-        let chosenCategory = this.classList[0]
+//     /* modal on get idea */
+//     $(".open").on("click", function () {
+//         let chosenCategory = this.classList[0]
 
-        $("#jar").effect("shake", {
-            direction: "up",
-            times: 4,
-            distance: 10
-        }, 1000);
+//         $("#jar").effect("shake", {
+//             direction: "up",
+//             times: 4,
+//             distance: 10
+//         }, 1000);
 
-        getIdea(chosenCategory)
+//         getIdea(chosenCategory)
 
-        setTimeout(() => {
-            $(".popup-overlay, .popup-content").addClass("active");
-        }, 1300)
-    });
+//         setTimeout(() => {
+//             $(".popup-overlay, .popup-content").addClass("active");
+//         }, 1300)
+//     });
 
-    $(".close, .popup-overlay").on("click", function () {
-        $(".popup-overlay, .popup-content").removeClass("active");
-    });
-
-
-    userData = JSON.parse(localStorage.getItem('myIdeaList'));
-    popUpWindow = document.querySelector(".popup-content > h2");
+//     $(".close, .popup-overlay").on("click", function () {
+//         $(".popup-overlay, .popup-content").removeClass("active");
+//     });
 
 
-    function getIdea(chosenCategory) {
-        //reset optional data fields
-        document.querySelector(".popup-url").innerText = "";
-        document.querySelector(".popup-date").innerText = "";
-
-        if (!userData || !userData.ideas.length) {
-            popUpWindow.innerText = "You have no activities in your idea jar!";
-            return
-        }
-
-        let ideasInCategory = userData.ideas.filter(idea => idea.category == chosenCategory);
+//     userData = JSON.parse(localStorage.getItem('myIdeaList'));
+//     popUpWindow = document.querySelector(".popup-content > h2");
 
 
-        if (chosenCategory == "other") {
-            ideasInCategory = userData.ideas;
-        }
+//     function getIdea(chosenCategory) {
+//         //reset optional data fields
+//         document.querySelector(".popup-url").innerText = "";
+//         document.querySelector(".popup-date").innerText = "";
 
-        //validates user choice and provides feedback
-        if (!ideasInCategory.length) {
-            popUpWindow.innerText = "You have no activities in this category";
-            return
-        }
+//         if (!userData || !userData.ideas.length) {
+//             popUpWindow.innerText = "You have no activities in your idea jar!";
+//             return
+//         }
 
-        //stores random idea data so it can be used to delete idea
-        let randomIdea = generateRandomIdea(ideasInCategory);
+//         let ideasInCategory = userData.ideas.filter(idea => idea.category == chosenCategory);
+
+
+//         if (chosenCategory == "other") {
+//             ideasInCategory = userData.ideas;
+//         }
+
+//         //validates user choice and provides feedback
+//         if (!ideasInCategory.length) {
+//             popUpWindow.innerText = "You have no activities in this category";
+//             return
+//         }
+
+//         //stores random idea data so it can be used to delete idea
+//         let randomIdea = generateRandomIdea(ideasInCategory);
         
-        //button to remove idea from jar
-        document.querySelector(".removeIdea").addEventListener("click", () => removeIdeaFromJar(randomIdea));
-    }
-}
+//         //button to remove idea from jar
+//         document.querySelector(".removeIdea").addEventListener("click", () => removeIdeaFromJar(randomIdea));
+//     }
+// }
 //generates a random index and uses it to pick a random idea
 function generateRandomIdea(ideasInCategory) {
     let randomIdeaIndex = Math.floor(Math.random() * ideasInCategory.length);

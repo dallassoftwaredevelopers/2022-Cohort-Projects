@@ -1,52 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+class IndexPage extends HTMLElement {
+    constructor() {
+        super();
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Font awesome cdn-->
-    <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cambay:wght@400;700&family=Handlee&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/project.css">
-    <script defer src="./src/project.js"></script>
-    <title>Team 2/B</title>
-</head>
+    connectedCallback() {
+        this.render();
+    }
 
-<body>
-    <div class="contentWrap">
-        <header>
-            <!--Nav-->
-            <nav>
-                <div class="container">
-                    <img id="nav-logo" src="./src/img/logo.png" alt="Idea jar logo">
-                    <div id="mobile-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="./index.html">Home</a>
-                        </li>
-                        <li class="nav-item hide-element">
-                            <a href="./src/add-idea.html">Add Idea</a>
-                        </li>
-                        <li class="nav-item hide-element">
-                            <a href="./src/get-idea.html">Get Idea</a>
-                        </li>
-                        <li>
-                            <a class="nav-btn" href="./src/login-signup.html">Sign In</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        
-        <!--Main content-->
+    render() {
+        this.innerHTML = `
         <main>
     
             <section id="home-first">
@@ -63,7 +25,7 @@
                         </div>
                         
                         <div class="section-img">
-                            <!-- <img src="./src/img/polaroid.png" alt=""> -->
+                            <!-- <img src="./img/polaroid.png" alt=""> -->
                         </div>
                     </div>
 
@@ -78,6 +40,7 @@
             <!--Second-->
             <section id="home-second">
                 
+
                 <div class="container split alt-split">
                     <div class="polaroid-space">
                         <figure class="polaroid">
@@ -99,7 +62,6 @@
                             <span class="idea-jar-ref">Idea Jar</span> allows you to keep track of resturants you want to try and fun activities you'd like to do. 
                         </p>
                     </div>
-
                 </div>
                 <!--Bottom SVG wave-->
                 <div class="wave-bottom">
@@ -132,13 +94,13 @@
                                     </section>
                                 </section>
                             </p>
-                            <button class="btn stay-home" onclick="location.href='./src/login-signup.html'">
+                            <button class="btn stay-home" onclick="location.href='./login-signup.html'">
                                 Sign Up
                             </button>
                         </div>
                         
                         <div class="section-img">
-                            <img src="./src/img/jar_2.png" alt="The Idea Jar">
+                            <img src="../img/jar_2.png" alt="The Idea Jar">
                         </div>
 
                 </div>
@@ -146,38 +108,9 @@
             </section>
     
         </main>
-    </div>
-    
-    <!--Footer-->
-    <footer>
-        <div class="containerFooter">
-            <div>
-                <h3 class="text-center">
-                    <a href="./src/team-2b/team-page.html">
-                        The Unstoppable Team 2B
-                    </a>
-                </h3>
-                <p class="text-center names">
-                    Ariel, Jennifer, <br> Michelle, John
-                </p>
-            </div>
+        `;
+    }
+}
 
-            <div>
-                <h3 class="text-center">
-                    Check out our work
-                </h3>
-                <div class=" text-center media-tray">
+customElements.define('x-index-page', IndexPage);
 
-                    <a target="_blank" href="https://fcc-dallas.com/">
-                        <i class="fab fa-brands fa-free-code-camp fa-2x"></i>
-                    </a>
-                    <a target="_blank" href="https://github.com/jgvargas/2022-Cohort-Projects">
-                        <i class="fab fa-brands fa-github fa-2x" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>
