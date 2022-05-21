@@ -26,7 +26,7 @@ class Footer extends HTMLElement {
                     <h3 class="text-center">
                         Check out our work
                     </h3>
-                    <div class=" text-center media-tray">
+                    <div class="text-center media-tray">
 
                         <a target="_blank" href="https://fcc-dallas.com/">
                             <i class="fab fa-brands fa-free-code-camp fa-2x"></i>

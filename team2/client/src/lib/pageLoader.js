@@ -22,6 +22,6 @@ const components = [
 // Add the current page to the components array
 addPageToComponentsArray();
 // Load components
-components.map(file => loadScript("../components/", file));
+components.map(file => loadScript("./src/components/", file));
 // Load project.js file
-loadScript("../", "project.js");
+loadScript("../", "./src/project.js");

@@ -63,6 +63,7 @@ class GetIdeaPage extends HTMLElement {
     }
 
     connectedCallback() {
+        this.startGetIdea();
         this.render();
     }
 
