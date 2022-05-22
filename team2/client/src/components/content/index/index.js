@@ -25,7 +25,6 @@ class IndexPage extends HTMLElement {
                         </div>
                         
                         <div class="section-img">
-                            <!-- <img src="./img/polaroid.png" alt=""> -->
                         </div>
                     </div>
 
@@ -100,7 +99,7 @@ class IndexPage extends HTMLElement {
                         </div>
                         
                         <div class="section-img">
-                            <img src="../img/jar_2.png" alt="The Idea Jar">
+                            <img src="./src/img/jar_2.png" alt="The Idea Jar">
                         </div>
 
                 </div>

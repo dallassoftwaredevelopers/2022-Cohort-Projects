@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="../lib/pageLoader.js"></script>
 <x-head></x-head>
-<body>
+<script src="./src/lib/pageLoader.js"></script>
+<body onload="startAddIdea()">
     <!-- Navbar -->
     <x-navbar></x-navbar>
 
     <!-- Page content -->
     <div class="contentWrap">
-        <x-index-page></x-index-page>
-        
+        <x-add-idea-page></x-add-idea-page>
     </div>
     
     <!--Footer-->
