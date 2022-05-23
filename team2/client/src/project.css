@@ -50,8 +50,6 @@
   font-family: sans-serif;
 }
 
-
-
 html {
   background: linear-gradient(var(--bg-gradient-2), var(--bg-gradient-1), #fff);
   background-repeat: no-repeat;
@@ -65,10 +63,6 @@ body {
   justify-content: center;
   min-height: 100%;
 }
-
-/*
-  background: linear-gradient(to bottom right , var(--bg-gradient-2), var(--bg-gradient-1) );
-*/
 
 main {
   margin: 4rem 0;
@@ -184,7 +178,6 @@ img {
   transform: rotate(-7deg);
   left: -50px;
 }
-
 
 figcaption {
   color: #333;
@@ -415,7 +408,10 @@ figcaption {
 
 
 @media (max-width: 810px) {
-
+  .section-header {
+    font-size: 2.5rem;
+  }
+  .section-text { font-size: 1.5rem;}
   .btnContainerMain {
     flex-direction: column;
     align-items: center;

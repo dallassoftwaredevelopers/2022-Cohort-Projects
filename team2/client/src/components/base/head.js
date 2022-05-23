@@ -20,7 +20,8 @@ class Head extends HTMLElement {
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Cambay:wght@400;700&family=Handlee&display=swap" rel="stylesheet">
-            <title>Team 2/B</title>
+            <title>Idea Jar</title>
+            <link rel="shortcut icon" href="./src/img/jar_favicon.ico">
         </head>
         `;
     }

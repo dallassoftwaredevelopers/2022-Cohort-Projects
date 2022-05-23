@@ -5,6 +5,61 @@
     <title>Confirm Email</title>
 </head>
 <body>
-    <h1>Your email has been confirmed!</h1>
+    <style>
+        html {
+            background: linear-gradient(#7b88d1, #d5f7ff);
+            height: 100%;
+            font-family: sans-serif;
+            color: rgb(70, 70, 70);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 10px 30px rgba(165, 165, 165, 0.3);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem;
+            padding: 1.5rem;
+        }
+        h1 {text-align: center;}
+        button {
+            border-radius: 10px;
+            border: none;
+            background: #00aaff;
+            cursor: pointer;
+            display: inline-block;
+            padding: .5rem 1rem;
+            transition: transform, background .1s ease-in-out;
+            text-decoration: none;
+        }
+        button:hover { background: #5cc8ff;}
+        button a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        .end-text {
+            font-size: .8rem;
+        }
+
+    </style>
+    <div class="card">
+        <img src="" alt="">
+        <h1>Your email has been confirmed!</h1>
+        <p>Thank you for trying out Idea Jar</p>
+        <button><a href="https://idea-jar.netlify.app">Vist your account</a></button>
+        <p class="end-text">You are receiving this email because you are a registered 
+            user on <a href="https://idea-jar.netlify.app">https://idea-jar.netlify.app</a>
+        </p>
+    </div>
 </body>
 </html>
