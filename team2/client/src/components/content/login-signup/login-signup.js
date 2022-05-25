@@ -10,34 +10,47 @@ class LoginSignUpPage extends HTMLElement {
             email: "",
             password: "",
             confirmPassword: ""
-        }
+        };
     }
 
     login() {
-        console.log('calling login')
-        fetch(`www.google.com`, {
-            method: 'GET'
-        }).then(res => {
-            console.log(res)
-        }).catch(err => {
-            console.log(err)
+        var form = document.getElementById('login');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            var requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            };
+
+            fetch(`http://localhost:17510/Api/Auth/Login`, requestOptions)
+            .then(response => console.log(response.json()))
+            .catch(error => console.log(error));
         })
     }
 
     #loginForm = `
-    <form id="login" class="" action="POST" method="${() => this.login}">
+    <form id="login" class="">
 
         <h2 class="text-center">Login</h2>
 
         <div class="text-center form-message form-message-error form-message-success"></div>
         <!--Username/email-->
         <div class="form-input-group">
-            <input class="form-input" placeholder="Username" autofocus type="text" name="" id="">
+            <input class="form-input" placeholder="Username" autofocus required type="text" id="username">
             <div class="form-message"></div>
         </div>
         <!--Password-->
         <div class="form-input-group">
-            <input class="form-input" placeholder="Password" type="password" name="" id="">
+            <input class="form-input" placeholder="Password" type="password" required id="password">
             <div class="form-message"></div>
         </div>
         <!--Submit-->
@@ -99,6 +112,8 @@ class LoginSignUpPage extends HTMLElement {
     
     connectedCallback() {
         this.render();
+
+        this.login();
     }
 
     render() {
