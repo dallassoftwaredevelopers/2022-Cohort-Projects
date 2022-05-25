@@ -18,16 +18,12 @@
   --bg-nav: #7b88d1;
   --nav-btn: #00aaff;
   --nav-btn-hover: #5cc8ff;
+
   --error: #c93737;
   --sucess: #4bb544;
 
-  --test-1: #e1e2f3;
-  --test-2: #8274c1;
-  --test-3: #dec1ff;
-  --test-4: #5cc8ff;
-  --test-5: #78bdef;
-  --test-6: #146696;
-  --test-7: #7b88d1;
+  --color-pink-10: #dec1ff;
+
   --color-grey-10: rgb(200, 200, 200);
   --color-purple-10: #6F57EB;
 }
@@ -953,6 +949,7 @@ nav .container {
     left: 0;
     top: -100%;
     background: var(--bg-nav);
+    opacity: .9;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -1005,7 +1002,7 @@ nav .container {
 ---------------*/
 footer {
   padding: 1rem 0;
-  background: var(--test-7);
+  background: var(--bg-nav);
   color: #fff;
   width: 100%;
   margin-top: auto;
@@ -1023,7 +1020,7 @@ footer {
 
 footer h3,
 footer a {
-  color: var(--test-3);
+  color: var(--color-pink-10);
   text-decoration: none;
 }
 
