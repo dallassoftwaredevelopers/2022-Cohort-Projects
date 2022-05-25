@@ -16,8 +16,7 @@ class Head extends HTMLElement {
             <link rel="stylesheet" href="../project.css">
             
             <!--Font awesome cdn-->
-            <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>
-            <!-- google font -->
+            <script src="https://kit.fontawesome.com/d828ae233c.js" crossorigin="anonymous"></script>            <!-- google font -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Cambay:wght@400;700&family=Handlee&display=swap" rel="stylesheet">
