@@ -5,6 +5,8 @@ function addPageToComponentsArray() {
     var path = window.location.pathname
     var pageName = path.substring(0, path.lastIndexOf(".html")).substring(path.lastIndexOf("/")+1);
     
+    if (pageName == null || pageName == "") pageName = "index";
+
     components.push(`content/${pageName}/${pageName}.js`);
 }
 
