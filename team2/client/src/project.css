@@ -176,7 +176,7 @@ img {
 
 #home-second .polaroid:nth-child(2) {
   transform: rotate(-7deg);
-  left: -50px;
+  left: 0px;
 }
 
 figcaption {
@@ -415,6 +415,17 @@ figcaption {
   .btnContainerMain {
     flex-direction: column;
     align-items: center;
+  }
+  #home-second .polaroid:nth-child(1) {
+    top: -80px;
+    left: 200px;
+    transform: scale(.7) rotate(14deg);
+  }
+  
+  #home-second .polaroid:nth-child(2) {
+    transform: scale(.7) rotate(-7deg);
+    top: -90px;
+    left: -50px;
   }
 
   .containerExplain {
