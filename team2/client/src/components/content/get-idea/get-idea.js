@@ -6,30 +6,7 @@ class GetIdeaPage extends HTMLElement {
     startGetIdea() {
 
         /* modal on get idea */
-        $(".open").on("click", function () {
-            let chosenCategory = this.classList[0]
-    
-            $("#jar").effect("shake", {
-                direction: "up",
-                times: 4,
-                distance: 10
-            }, 1000);
-    
-            getIdea(chosenCategory)
-    
-            setTimeout(() => {
-                $(".popup-overlay, .popup-content").addClass("active");
-            }, 1300)
-        });
-    
-        $(".close, .popup-overlay").on("click", function () {
-            $(".popup-overlay, .popup-content").removeClass("active");
-        });
-    
-    
-        userData = JSON.parse(localStorage.getItem('myIdeaList'));
-        popUpWindow = document.querySelector(".popup-content > h2");
-    
+        
     
         function getIdea(chosenCategory) {
             //reset optional data fields

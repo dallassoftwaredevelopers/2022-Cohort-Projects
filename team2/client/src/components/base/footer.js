@@ -13,7 +13,7 @@ class Footer extends HTMLElement {
             <div class="containerFooter">
                 <div>
                     <h3 class="text-center">
-                        <a href="./src/team-2b/team-page.html">
+                        <a href="#">
                             The Unstoppable Team 2B
                         </a>
                     </h3>

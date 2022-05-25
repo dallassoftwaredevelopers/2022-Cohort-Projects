@@ -42,16 +42,16 @@ class IndexPage extends HTMLElement {
                     <div class="polaroid-space">
                         <figure class="polaroid">
                             <img class="" src="./src/img/people-sitting-park.jpg" alt="">
-                            <figcaption>Park Festival</figcaption>
+                            <figcaption></figcaption>
                         </figure>
                         <figure class="polaroid">
                             <img class="" src="./src/img/people-on-river.jpg" alt="">
-                            <figcaption>Sandy Creek</figcaption>
+                            <figcaption></figcaption>
                         </figure>
                         
                     </div>
                         
-                    <div class="section-space">
+                    <div class="section-space card">
                         <h1 class="section-header">
                             Explore your world
                         </h1>
@@ -75,28 +75,27 @@ class IndexPage extends HTMLElement {
                             <h1 class="section-header">
                                 Try Idea Jar out!
                             </h1>
-                            <p>What can you do?</p>
                             <p class="section-text">
                                 <section class="containerExplain">
 
                                     <section>
         
-                                        <div class="putIdeaExplain outdoor">PUT IDEA IN JAR</div>
+                                        <div class="putIdeaExplain outdoor">Add an Idea</div>
                                         <p>Add resturants and fun activities when you learn about them.</p>
                                     </section>
                                     <section>
-                                        <div class="takeIdeaExplain indoor">TAKE IDEA FROM JAR</div>
+                                        <div class="takeIdeaExplain indoor">Get an Idea</div>
                                         <p>Have <span class="idea-jar-ref">Idea Jar</span> randomly select from the ideas
                                             you've entered</p>
                                     </section>
                                 </section>
                             </p>
-                            <button class="btn stay-home" onclick="location.href='./login-signup.html'">
+                            <button class="form-btn stay-home" onclick="location.href='./login-signup.html'">
                                 Sign Up
                             </button>
                         </div>
                         
-                        <div class="section-img">
+                        <div class="section-img index-jar-shake">
                             <img src="./src/img/jar_2.png" alt="The Idea Jar">
                         </div>
 
