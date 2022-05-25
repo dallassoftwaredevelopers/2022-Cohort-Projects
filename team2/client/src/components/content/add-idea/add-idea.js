@@ -69,7 +69,7 @@ class AddIdeaPage extends HTMLElement {
                     </div>
 
                     <div class="img-container">
-                        <img class="jar" src="../img/jar_2.png" alt="Idea jar">
+                        <img class="jar" src="./src/img/jar_2.png" alt="Idea jar">
                     </div>
                 </section>
 

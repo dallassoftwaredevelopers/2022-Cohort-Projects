@@ -25,7 +25,6 @@ class IndexPage extends HTMLElement {
                         </div>
                         
                         <div class="section-img">
-                            <!-- <img src="./img/polaroid.png" alt=""> -->
                         </div>
                     </div>
 
@@ -39,16 +38,14 @@ class IndexPage extends HTMLElement {
     
             <!--Second-->
             <section id="home-second">
-                
-
                 <div class="container split alt-split">
                     <div class="polaroid-space">
                         <figure class="polaroid">
-                            <img class="" src="../img/people-sitting-park.jpg" alt="">
+                            <img class="" src="./src/img/people-sitting-park.jpg" alt="">
                             <figcaption>Park Festival</figcaption>
                         </figure>
                         <figure class="polaroid">
-                            <img class="" src="../img/people-on-river.jpg" alt="">
+                            <img class="" src="./src/img/people-on-river.jpg" alt="">
                             <figcaption>Sandy Creek</figcaption>
                         </figure>
                         
@@ -100,7 +97,7 @@ class IndexPage extends HTMLElement {
                         </div>
                         
                         <div class="section-img">
-                            <img src="../img/jar_2.png" alt="The Idea Jar">
+                            <img src="./src/img/jar_2.png" alt="The Idea Jar">
                         </div>
 
                 </div>
