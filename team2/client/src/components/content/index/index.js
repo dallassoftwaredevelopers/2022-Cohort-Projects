@@ -79,7 +79,6 @@ class IndexPage extends HTMLElement {
                                 <section class="containerExplain">
 
                                     <section>
-        
                                         <div class="putIdeaExplain outdoor">Add an Idea</div>
                                         <p>Add resturants and fun activities when you learn about them.</p>
                                     </section>
