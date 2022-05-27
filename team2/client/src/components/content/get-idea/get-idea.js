@@ -52,7 +52,7 @@ class GetIdeaPage extends HTMLElement {
                 <div class="containerGet">
 
                     <div class="containerJar">
-                        <img src="../img/jar_2.png" id="jar" alt="jar with colored paper slips"></img>
+                        <img src="./src/img/jar_2.png" id="jar" alt="jar with colored paper slips"></img>
                     </div>
                     <section class="activity-buttons">
                         <button class="other open shake">Any Activity</button>

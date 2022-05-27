@@ -154,11 +154,6 @@ class AddIdeaPage extends HTMLElement {
                                     <input autofocus class="form-input" type="text" name="event-name" id="event-name"
                                         placeholder="'FCC Dallas Meetup'" required />
 
-                                    <h3>
-                                        <label for="event-url">Event URL:</label>
-                                    </h3>
-
-                                    <input class="form-input" type="text" name="event-url" id="event-url" />
                                     <br>
 
                                     <h3>
@@ -169,7 +164,7 @@ class AddIdeaPage extends HTMLElement {
 
                                 </div>
 
-                                <div>
+                                <div class="category-space">
                                     <h3>
                                         <label for="category">Category:</label>
                                     </h3>

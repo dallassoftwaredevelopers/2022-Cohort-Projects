@@ -764,7 +764,10 @@ input[type="radio"] {
 
 input[type="radio"]:checked+label {
   color: var(--icon-color);
-  transform: translateY(-2px);
+  border: 2px solid rgb(102, 102, 102);
+}
+
+.category-space {
 }
 
 .category-options {
