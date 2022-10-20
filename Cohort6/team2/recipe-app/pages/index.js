@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Holiday Meals</title>
+        <title>GobbleMeal</title>
         <meta name="description" content="Search your favorite holiday meals" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
