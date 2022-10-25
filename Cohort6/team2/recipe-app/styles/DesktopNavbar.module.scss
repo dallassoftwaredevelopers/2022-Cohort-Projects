@@ -20,6 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 1em;
 
     &__link {
       transition: 0.2s ease all;
@@ -37,5 +38,11 @@
         color: orange;
       }
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main {
+    display: none;
   }
 }

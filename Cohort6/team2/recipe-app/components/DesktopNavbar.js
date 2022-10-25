@@ -1,6 +1,6 @@
 import styles from "@/styles/DesktopNavbar.module.scss";
 import Image from "next/image";
-import Logo from "@/assets/logo.png";
+import Logo from "@/assets/gobble_logo.png";
 import Link from "next/link";
 
 const DesktopNavbar = () => {
@@ -15,7 +15,7 @@ const DesktopNavbar = () => {
           <Link href="/">Home</Link>
         </div>
         <div className={styles.navlinks__link}>
-          <Link href="/">Recipe</Link>
+          <Link href="/recipes">Recipe</Link>
         </div>
         <div className={styles.navlinks__link}>
           <Link href="/">Blog</Link>

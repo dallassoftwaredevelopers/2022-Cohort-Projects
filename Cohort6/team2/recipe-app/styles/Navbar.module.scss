@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 1em;
 
     .leftSocials {
       display: flex;
@@ -53,4 +54,14 @@
   border-bottom: 1px solid white;
   padding: 10px;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .main .navbar .leftSocials {
+    display: none;
+  }
+
+  .main .navbar .rightSearch {
+    margin-left: auto;
+  }
 }
