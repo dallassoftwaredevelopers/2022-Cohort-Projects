@@ -1,0 +1,1 @@
+<h1>Welcome to the Recipes page</h1>
