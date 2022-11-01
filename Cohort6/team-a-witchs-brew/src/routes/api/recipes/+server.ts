@@ -1,7 +1,7 @@
 import {json} from "@sveltejs/kit";
 
 const spoonSearchUrl = 'https://api.spoonacular.com/recipes/complexSearch?';
-const apiKey = ""
+const apiKey = "1ee07d607fd649ad9531c3720224f3da"
 
 
 const cacheMap = new Map();

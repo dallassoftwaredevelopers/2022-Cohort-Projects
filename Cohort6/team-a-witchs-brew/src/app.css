@@ -1,3 +1,92 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.recipe-card{
+    width: 80%;
+    height: 80%;
+    background-color: #4f1138;
+    color: white;
+    margin-right: 0%;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+.recipe-card:hover{
+    cursor: pointer;
+}
+.recipe-card-container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+.recipe-name, .recipe-steps, .recipe-rating{
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.recipe-name{
+    font-weight: bold;
+    margin-top: 1rem;
+    white-space: nowrap;
+}
+.recipe-steps{
+    padding-bottom: 0rem;
+}
+.recipe-image{
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+/* .positioning-modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+} */
+.recipe-modal-container{
+    position: fixed;
+    left: 20vw;
+    top: 15vh;
+    
+    width: 60vw;
+    height: 70vh;
+    background-color: white;
+    border-color: black;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    padding: 2rem;
+    overflow-y: scroll;
+    z-index: 20;
+    /* display: flex;
+    flex-direction: column; */
+}
+.modal-image{
+    border-radius: 10px;
+}
+.modal-top-half{
+    display: flex;
+}
+.modal-top-left{
+    width: 80%;
+}
+.modal-ingredients{
+    font-size: 1.8rem;
+}
+.modal-instructions{
+    text-align: center;
+    font-size: 2rem;
+}
