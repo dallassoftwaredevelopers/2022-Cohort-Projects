@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import Navbar from "@/components/Navbar";
 import DesktopNavbar from "@/components/DesktopNavbar";
+import ImageSlider from "@/components/imageSlider/ImageSlider";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <main className={styles.home}>
         <Navbar />
         <DesktopNavbar />
+        <ImageSlider />
       </main>
     </div>
   );
