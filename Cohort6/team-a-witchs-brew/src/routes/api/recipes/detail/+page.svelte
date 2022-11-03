@@ -1,17 +1,16 @@
 <script lang="ts">
+    import {json} from "@sveltejs/kit";
 
     let query = "";
     let results = "";
 
     async function getResults() {
         let formData = new FormData();
-        formData.append('query', query);
-
-        const response = await fetch("/api/recipes",{
+        formData.append('id', query);
+        const response = await fetch("/api/recipes/detail",{
             method: "POST",
             body: formData,
         });
-
         results = await response.json();
     }
 </script>

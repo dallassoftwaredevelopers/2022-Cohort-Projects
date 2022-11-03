@@ -1,10 +1,10 @@
 import {json} from "@sveltejs/kit";
 
 const spoonSearchUrl = 'https://api.spoonacular.com/recipes/complexSearch?';
-const apiKey = "1ee07d607fd649ad9531c3720224f3da"
+const apiKey = "<API_KEY>"
 
 
-const cacheMap = new Map();
+const cacheMap: Map<string,any> = new Map();
 
 // test json, so you can just have it return this instead of hitting a real API.
 const test = `{
@@ -29,20 +29,21 @@ const test = `{
 
 export async function POST({request}: { request: Request }) {
     const data = await request.formData();
-    const query = data.get('query');
+    const query = data.get('query') ?? 'halloween';
+
+    if (typeof query != 'string'){
+        return json({"error": "unexpected input"});
+    }
 
     if (!cacheMap.has(query)) {
-        console.log("HERE");
         const results = await fetch(spoonSearchUrl + new URLSearchParams({
-            query: 'halloween',
+            query: query,
             apiKey: apiKey,
         }));
+
         const data = await results.json();
-        console.log(data);
         cacheMap.set(query,data);
-        console.info(cacheMap.get(query));
-    } else {
-        console.log("hit the cache!");
     }
+
     return json(cacheMap.get(query));
 }
