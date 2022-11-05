@@ -1,4 +1,4 @@
-import styles from "@/styles/Navbar.module.scss";
+import styles from "./Navbar.module.scss";
 import { GrFacebook, GrTwitter, GrInstagram, GrSearch } from "react-icons/gr";
 import { Button } from "@mui/material";
 import { useState } from "react";
@@ -57,13 +57,13 @@ const Navbar = () => {
               <Link href="/">HOME</Link>
             </li>
             <li>
-              <Link href="/">RECIPES</Link>
+              <Link href="/recipes">RECIPES</Link>
             </li>
             <li>
-              <Link href="/">BLOG</Link>
+              <Link href="/blog">BLOG</Link>
             </li>
             <li>
-              <Link href="/">ABOUT</Link>
+              <Link href="/about">ABOUT</Link>
             </li>
           </ul>
         </div>

@@ -2,8 +2,7 @@ import React from "react";
 import { data as slides } from "./data";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-import styles from "../../styles/imageSlider.module.scss";
+import styles from "./ImageSlider.module.scss";
 import { useState, useEffect } from "react";
 
 const ImageSlider = () => {
@@ -26,7 +25,7 @@ const ImageSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       goToNext();
-    }, 3000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
