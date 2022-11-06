@@ -3,7 +3,7 @@ import styles from "./RecipeCard.module.scss";
 import Image from "next/image";
 import { AiFillStar, AiOutlineHeart, AiOutlineComment } from "react-icons/ai";
 
-const RecipeCard = () => {
+const RecipeCard = ({ title, rating, likes, comments }) => {
   return (
     <div className={styles.card__container}>
       <div className={styles.recipe__image}>
@@ -12,30 +12,27 @@ const RecipeCard = () => {
           layout="responsive"
           width="100%"
           height="100%"
-          objectFit="cover"
         />
       </div>
       <div className={styles.recipe__content}>
         <div className={styles.recipe__rating}>
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
-          <AiFillStar />
+          {[...Array(rating)].map((item) => (
+            <AiFillStar key={item} />
+          ))}
         </div>
-        <div className={styles.recipe__title}>Delicious Fancy Cheesy Pizza</div>
+        <div className={styles.recipe__title}>{title}</div>
         <div className={styles.recipe__stats}>
           <div className={styles.recipe__stats_likes}>
             <div>
               <AiOutlineHeart />
             </div>
-            <p>123</p>
+            <p>{likes}</p>
           </div>
           <div className={styles.recipe__stats_comments}>
             <div>
               <AiOutlineComment />
             </div>
-            <p>123</p>
+            <p>{comments}</p>
           </div>
         </div>
       </div>
