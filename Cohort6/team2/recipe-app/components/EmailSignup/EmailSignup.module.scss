@@ -40,7 +40,7 @@
       justify-content: center;
       align-items: center;
       background-color: white;
-      margin-bottom: 1em;
+      margin-bottom: 0.5em;
 
       input {
         background: none;
@@ -51,7 +51,8 @@
       button {
         width: 150px;
         border: none;
-        background-color: orange;
+        background-color: #fa642f;
+        color: white;
         text-transform: uppercase;
         padding: 0.5em 2em;
       }
