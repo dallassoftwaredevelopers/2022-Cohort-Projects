@@ -16,8 +16,8 @@ const RecipeCard = ({ title, rating, likes, comments }) => {
       </div>
       <div className={styles.recipe__content}>
         <div className={styles.recipe__rating}>
-          {[...Array(rating)].map((item) => (
-            <AiFillStar key={item} />
+          {[...Array(rating)].map((item, i) => (
+            <AiFillStar key={i} />
           ))}
         </div>
         <div className={styles.recipe__title}>{title}</div>
