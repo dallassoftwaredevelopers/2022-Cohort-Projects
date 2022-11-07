@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="description" content="Search your favorite holiday meals" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.home}>
+      <main className={styles.home__container}>
         <ImageSlider />
         <RecommendedRecipes />
         <EmailSignup />

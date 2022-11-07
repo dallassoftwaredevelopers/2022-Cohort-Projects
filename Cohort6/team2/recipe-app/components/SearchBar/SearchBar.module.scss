@@ -1,0 +1,12 @@
+.input {
+  width: 20%;
+  min-width: 300px;
+  margin: 0 auto;
+  padding: 1em 1.5em;
+  border-radius: 50px;
+  border: 1px solid #ff9633;
+
+  &:focus {
+    box-shadow: 0 0 5px 5px #ff9633a2;
+  }
+}

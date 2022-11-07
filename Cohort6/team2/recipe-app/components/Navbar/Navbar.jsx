@@ -12,17 +12,23 @@ const Navbar = () => {
   return (
     <div className={styles.main}>
       <div className={styles.navbar}>
-        <div className={styles.socialsContainer}>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer">
-            <GrFacebook size={24} />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer">
-            <GrTwitter size={24} />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer">
-            <GrInstagram size={24} />
-          </a>
-        </div>
+        <ul className={styles.socialsContainer}>
+          <li>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <GrFacebook size={24} />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              <GrTwitter size={24} />
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <GrInstagram size={24} />
+            </a>
+          </li>
+        </ul>
         <div className={styles.searchContainer}>
           <GrSearch
             size={20}
