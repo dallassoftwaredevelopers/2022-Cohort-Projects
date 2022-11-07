@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import ImageSlider from "@/components/ImageSlider/ImageSlider";
 import RecommendedRecipes from "@/components/RecommendedRecipes/RecommendedRecipes";
+import EmailSignup from "@/components/EmailSignup/EmailSignup";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <main className={styles.home}>
         <ImageSlider />
         <RecommendedRecipes />
+        <EmailSignup />
       </main>
     </div>
   );
