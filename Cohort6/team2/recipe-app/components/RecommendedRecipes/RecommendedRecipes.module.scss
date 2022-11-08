@@ -10,11 +10,17 @@
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
+   grid-template-columns: repeat(1, 1fr);
+     grid-template-rows: auto auto;
     column-gap: 2em;
     row-gap: 2em;
     justify-items: center;
+    @media(min-width: 700px ){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media(min-width: 1000px ){
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .loadmore__btn {
