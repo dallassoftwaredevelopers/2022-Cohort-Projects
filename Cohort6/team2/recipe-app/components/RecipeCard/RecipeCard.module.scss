@@ -6,19 +6,31 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  cursor: pointer;
+  transition: 0.2s ease all;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   .recipe__image {
-    height: 50%;
+    height: 100%;
 
     img {
       border-top-left-radius: 24px;
       border-top-right-radius: 24px;
-      position: relative !important;
     }
   }
 
   .recipe__content {
     padding: 1em;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    border-radius: 24px;
+    background-color: white;
+    width: 100%;
 
     .recipe__rating {
       display: flex;
@@ -28,6 +40,13 @@
 
     .recipe__title {
       padding-top: 1em;
+      text-transform: uppercase;
+      color: #4a4a4a;
+    }
+
+    .recipe__description {
+      font-size: 0.7rem;
+      color: gray;
     }
 
     .recipe__stats {

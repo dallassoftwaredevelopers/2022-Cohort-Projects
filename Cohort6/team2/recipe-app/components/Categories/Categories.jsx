@@ -4,7 +4,7 @@ import CategoryItem from "../CategoryItem/CategoryItem";
 
 const Categories = ({ categories, categoriesIsLoading, categoriesIsError }) => {
   if (categoriesIsLoading) {
-    return <div>Loading...</div>;
+    return <div className={styles.loading}>Loading...</div>;
   }
   if (categoriesIsError) {
     return <div>Error</div>;
