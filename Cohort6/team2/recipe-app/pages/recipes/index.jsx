@@ -4,16 +4,8 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Categories from "@/components/Categories/Categories";
 import Meals from "@/components/Meals/Meals";
-
-const getCategories = async () => {
-  const { data } = await axios.get("/categories.php");
-  return data.categories;
-};
-
-const getMeals = async () => {
-  const { data } = await axios.get("/random.php");
-  return data.meals;
-};
+import { getCategories } from "@/utils/getCategories";
+import { getLatestMeals } from "@/utils/getLatestMeals";
 
 const index = () => {
   const {
@@ -27,7 +19,7 @@ const index = () => {
     isLoading: mealsIsLoading,
     isError: mealsIsError,
     error: mealsError,
-  } = useQuery(["meals"], getMeals);
+  } = useQuery(["meals"], getLatestMeals);
 
   return (
     <div className={styles.recipes__container}>

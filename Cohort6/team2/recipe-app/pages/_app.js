@@ -5,7 +5,10 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://www.themealdb.com/api/json/v1/1";
+const API = process.env.REACT_APP_API_KEY;
+
+axios.defaults.baseURL = `https://www.themealdb.com/api/json/v2/9973533`;
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
