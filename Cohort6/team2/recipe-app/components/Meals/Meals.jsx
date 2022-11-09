@@ -9,6 +9,7 @@ const Meals = ({ meals, mealsIsLoading, mealsIsError, mealsError }) => {
   if (mealsIsError) {
     return <div>Error: {mealsError}</div>;
   }
+
   return (
     <div className={styles.meals__container}>
       {meals.map((meal, i) => (
