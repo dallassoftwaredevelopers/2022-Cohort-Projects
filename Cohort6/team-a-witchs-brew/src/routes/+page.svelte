@@ -4,9 +4,12 @@
   import holidayMenu from "../static/holiday menu picture.jpeg";
   import warmPies from "../static/pumpkin pie.jpeg";
   import picFrame from "../static/frame.png";
+
   import Jacob from "../static/Jacob.jpg";
   import Mike from "../static/Mike.png";
   import Sabina from "../static/Sabina.jpg";
+
+
 </script>
 
 
@@ -50,37 +53,6 @@
     </div>
   </div>
 
-  <div class="footer w-full h-[800px]">
-    <div class="unflip">
-    <h2 class="team-header">Meet the team</h2>
-    <!--<div class="team-pictures">
-      <div class="frames flex justify-around items-center">
-        <div class="">
-          <img
-            class="w-[300px] h-[400px] frame"
-            src={picFrame}
-            alt="picture of a frame"
-          />
-        </div>
-
-        <div>
-          <img
-            class="w-[300px] h-[400px] frame"
-            src={picFrame}
-            alt="picture of a frame"
-          />
-        </div>
-
-        <div>
-          <img
-            class="w-[300px] h-[400px] frame"
-            src={picFrame}
-            alt="picture of a frame"
-          />
-        </div>
-      </div>
-    </div>-->
-    
     <div class="team-pictures flex justify-evenly items-center">
       <div class="pics">
       <img class="w-[350px] h-[350px] Jacob team-members " src={Jacob} alt="picture of Jacob">
@@ -96,7 +68,7 @@
       <img class="w-[300px] h-[350px] Sabina team-members" src={Sabina} alt="picture of Sabina">
       <h4>Sabina</h4>
     </div>
-
+    
   </div>
   </div>
   </div>

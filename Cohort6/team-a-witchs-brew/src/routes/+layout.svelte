@@ -70,8 +70,6 @@
   
   <slot />
   
-  
->
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap");

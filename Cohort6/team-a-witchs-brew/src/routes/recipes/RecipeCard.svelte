@@ -23,9 +23,9 @@
     <!-- svelte-ignore a11y-img-redundant-alt -->
     <img class="recipe-image" alt="Recipe Image" src={card.image} />
 
-    <h3 class="recipe-name">{card.name}</h3>
-    <p class="recipe-rating">Rating: {card.stars}</p>
-    <p class="recipe-steps"># of steps: {card.instructions.length}</p>
+    <h3 class="recipe-name">{card.name ? card.name : card.title}</h3>
+    <!-- <p class="recipe-rating">Rating: {card.stars}</p>
+    <p class="recipe-steps"># of steps: {card.instructions.length}</p> -->
 </div>
 
 
