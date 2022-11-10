@@ -22,7 +22,7 @@
                 </ul>
             </div>
             <div class="modal-top-right">
-                <span on:click={closeModal} style="float: right;">&#x2716;</span>
+                <span class="x" on:click={closeModal} style="float: right;">&#x2716;</span>
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <img class="modal-image" src={card.image} />
             </div>
@@ -31,7 +31,7 @@
             <h2 class="modal-instructions">Instructions</h2>
             <ul style="list-style-type: circle;">
                 {#each card.instructions as instruction}
-                    <li>{instruction.directions}</li>
+                    <li>{instruction.directions ? instruction.directions : instruction.step}</li>
                 {/each}                
             </ul>
         </div>

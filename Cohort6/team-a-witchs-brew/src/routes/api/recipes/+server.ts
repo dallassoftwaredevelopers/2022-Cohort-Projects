@@ -1,7 +1,8 @@
 import {json} from "@sveltejs/kit";
+import { SECRET_API_KEY } from "$env/static/private";
 
 const spoonSearchUrl = 'https://api.spoonacular.com/recipes/complexSearch?';
-const apiKey = "<API_KEY>"
+const apiKey = SECRET_API_KEY
 
 
 const cacheMap: Map<string,any> = new Map();
