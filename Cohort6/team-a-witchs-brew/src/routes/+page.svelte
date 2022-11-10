@@ -5,7 +5,11 @@
   import warmPies from "../static/pumpkin pie.jpeg";
   import picFrame from "../static/frame.png";
 
-  import jacobPic from "../static/Jacob.jpg"
+  import Jacob from "../static/Jacob.jpg";
+  import Mike from "../static/Mike.png";
+  import Sabina from "../static/Sabina.jpg";
+
+
 </script>
 
 
@@ -49,36 +53,25 @@
     </div>
   </div>
 
-  <!-- <div class="footer w-full h-[800px]">
-    <h2 class="team">Meet the team</h2>
-    <div class="team-pictures">
-      <div class="frames flex justify-around items-center">
-        <div class="image-container">
-          <img
-            class="w-[300px] h-[400px] frame"
-            src={picFrame}
-            alt="picture of a frame"
-          />
-        </div>
-
-        <div>
-          <img
-            class="w-[300px] h-[400px] frame"
-            src={picFrame}
-            alt="picture of a frame"
-          />
-        </div>
-
-        <div>
-          <img
-            class="w-[300px] h-[400px] frame"
-            src={picFrame}
-            alt="picture of a frame"
-          />
-        </div>
-      </div>
+    <div class="team-pictures flex justify-evenly items-center">
+      <div class="pics">
+      <img class="w-[350px] h-[350px] Jacob team-members " src={Jacob} alt="picture of Jacob">
+      <h4>Jacob</h4>
     </div>
-  </div> -->
+
+    <div class="pics">
+      <img class="w-[350px] h-[350px] Mike team-members" src={Mike} alt="picture of Mike">
+      <h4>Mike</h4>
+    </div>
+
+    <div class="pics">
+      <img class="w-[300px] h-[350px] Sabina team-members" src={Sabina} alt="picture of Sabina">
+      <h4>Sabina</h4>
+    </div>
+    
+  </div>
+  </div>
+  </div>
 
   <slot />
 
@@ -113,8 +106,7 @@
     padding: 10 px, auto;
   }
 
-  h2,
-  h3 {
+  h2, h3, h4 {
     font-family: "Princess Sofia", cursive;
     color: #972e3f;
     text-align: center;
@@ -130,15 +122,21 @@
 
   h3 {
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 500;
     padding-top: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.10em;
+  }
+
+  h4 {
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.10em;
   }
 
   .images {
     border-radius: 20px;
     filter: drop-shadow(5px 5px 3px #2d081f);
-    padding: 0;
-    margin: 0;
   }
 
   .images:hover {
@@ -151,16 +149,36 @@
     font-size: 50px;
   }
 
-  .footer {
-    background-image: url("../static/footer picture.jpeg");
-    background-size: auto 800px;
-    -webkit-transform: scaleY(-1);
+
+  /* -webkit-transform: scaleY(-1);
     -moz-transform: scaleY(-1);
     -ms-transform: scaleY(-1);
     -o-transform: scaleY(-1);
-    transform: scaleY(-1);
+    transform: scaleY(-1);*/
+
+  
+  .footer {
+    background-image: url("../static/footer picture.jpeg");
+    background-size: auto 100%;
+    transform: rotateX(180deg);
   }
 
+  .unflip {
+    transform: rotateX(180deg);
+    padding-bottom: 230px;
+  }
+
+  .team-pictures {
+    padding-top: 0px;
+    padding-bottom: 40px;
+  }
+
+  .team-members {
+    border: 40px solid transparent;
+    border-image: url("../static/frame.png") 12% fill round;
+  }
+
+  /*
   .footer * {
     -webkit-transform: scaleY(-1);
     -moz-transform: scaleY(-1);
@@ -168,14 +186,16 @@
     -o-transform: scaleY(-1);
     transform: scaleY(-1);
   }
+*/
 
-  .team {
+/*  
+.team {
     position: absolute;
     top: 80%;
     left: 40%;
     margin: 0;
     padding: 0;
-  }
+  }*/
 
  
   </style>
