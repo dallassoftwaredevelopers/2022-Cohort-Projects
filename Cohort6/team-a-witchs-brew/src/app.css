@@ -3,18 +3,29 @@
 @tailwind utilities;
 
 
+body {
+    background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(243,182,166,1) 53%, rgba(241,136,109,1) 100%);
+}
+
 .recipe-card{
-    width: 80%;
+    width: 70%;
     height: 80%;
-    background-color: #4f1138;
-    color: white;
+    background-color: #fff;
+    color: #2d081f;
     margin-right: 0%;
     overflow: hidden;
     border-radius: 10px;
+    border:#2d081f 1px solid;
+    filter: drop-shadow(0 0 0.75rem #2d081f);
 
 }
 .recipe-card:hover{
     cursor: pointer;
+    width: 80%;
+    height: 90%;
+    border: #2d081f 3px solid;
+    transition: 500ms ease;
 }
 .recipe-card-container{
     display: grid;
@@ -37,9 +48,9 @@
     padding-bottom: 0rem;
 }
 .recipe-image{
-    height: 50%;
+    height: 70%;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 
@@ -63,12 +74,10 @@
     
     width: 60vw;
     height: 70vh;
-    background-color: white;
-    border-color: black;
+    background-color: #f6eeeb;
+    border: #2d081f 2px solid;
     border-radius: 20px;
-    border-width: 2px;
-    border-style: solid;
-    padding: 2rem;
+    padding: 5rem;
     overflow-y: scroll;
     z-index: 20;
     /* display: flex;
@@ -76,17 +85,31 @@
 }
 .modal-image{
     border-radius: 10px;
+    border: #2d081f 1px solid;
+    filter: drop-shadow(0 3mm 3mm #2d081f);
+  
+
 }
+
 .modal-top-half{
     display: flex;
 }
 .modal-top-left{
     width: 80%;
 }
+
 .modal-ingredients{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #2d081f;
     font-size: 1.8rem;
 }
 .modal-instructions{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #2d081f;
     text-align: center;
     font-size: 2rem;
+}
+.footer-picture {
+    width: 100%;
+    height: 200px;
 }
