@@ -10,9 +10,7 @@ const ImageSlider = () => {
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
-    console.log("newsindex", isFirstSlide);
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    console.log("newsindex", newIndex);
     setCurrentIndex(newIndex);
   };
 
@@ -25,7 +23,7 @@ const ImageSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       goToNext();
-    }, 10000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [currentIndex]);
 
@@ -36,6 +34,7 @@ const ImageSlider = () => {
     <div className={styles.carousel}>
       <div className={styles.imgItem}>
         <Image src={src} alt={title} className={styles.img} layout="fill" />
+        <div className={styles.gradient} />
       </div>
 
       <div className={styles.actions}>

@@ -1,7 +1,7 @@
 .wrapper{
     
     padding: 1em 5em;
-    max-width: 1150px;
+    max-width: 1120px;
     margin-bottom: 1em;
    
     h3{
@@ -17,11 +17,10 @@
         
         .card{
             height: 10rem;
-            width: 200px;
+            min-width: 200px;
             min-width: 100%;
             border-radius: 2rem;
             overflow: hidden;
-        
             cursor: pointer;
             box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
             &:active{
@@ -43,6 +42,10 @@
             text-align: center;
             font-weight: 600;
             font-size: 0.9rem;
+            cursor: pointer;
+            &:active{
+                cursor: grabbing;
+               }
         }
     }
 
