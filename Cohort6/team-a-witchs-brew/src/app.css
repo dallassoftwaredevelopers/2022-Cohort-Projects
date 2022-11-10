@@ -87,8 +87,8 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(243,182,166,1) 53
     border-radius: 10px;
     border: #2d081f 1px solid;
     filter: drop-shadow(0 3mm 3mm #2d081f);
-  
-
+    width: 500px;
+    height: auto;
 }
 
 .modal-top-half{
@@ -111,5 +111,5 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(243,182,166,1) 53
 }
 .footer-picture {
     width: 100%;
-    height: 200px;
+    height: 250px;
 }
