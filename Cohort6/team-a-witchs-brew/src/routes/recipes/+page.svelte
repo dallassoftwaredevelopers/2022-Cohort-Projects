@@ -1,45 +1,48 @@
 <script async>
-    import RecipeCard from "./RecipeCard.svelte";
-    import { onMount } from "svelte";
-    /**
-     * @type {any}
-     */
-    let cards = []
-    let topLevelModal = false
+  import RecipeCard from "./RecipeCard.svelte";
+  import { onMount } from "svelte";
+  /**
+   * @type {any}
+   */
+  let cards = [];
 
-    onMount(async function(){
-        const response = await fetch("http://127.0.0.1:5173/api/recipes/halloween");
-        const data = await response.json();
-        cards = data.default
+  let topLevelModal = false;
 
-        // @ts-ignore
-        // document.getElementById("recipe-card-container").addEventListener("click", () =>{
-        //     topLevelModal = false
-            
-        //     console.log("Set to false")
-        // })
-    })
+  onMount(async function () {
+    const response = await fetch("http://127.0.0.1:5173/api/recipes/halloween");
+    const data = await response.json();
 
+    cards = data.default;
 
+    // @ts-ignore
+    // document.getElementById("recipe-card-container").addEventListener("click", () =>{
+    //     topLevelModal = false
 
+    //     console.log("Set to false")
+    // })
+  });
 
+  import footerPic from "../../static/pumpkins.png";
 </script>
 
-<h1>Welcome to the Recipes page</h1>
-
 <main>
-    <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div id="recipe-card-container" class="recipe-card-container">
-        {#each cards as card (card.id)}
-            <RecipeCard topLevelModal={topLevelModal} card={card} />
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
 
-            <!-- <div class="recipe-card">
+  <div id="recipe-card-container" class="recipe-card-container">
+    {#each cards as card (card.id)}
+      <RecipeCard {topLevelModal} {card} />
+
+      <!-- <div class="recipe-card">
                 <img class="recipe-image" alt="Recipe Image" src={card.image} />
 
                 <h3 class="recipe-name">{card.name}</h3>
                 <p class="recipe-rating">Rating: {card.stars}</p>
                 <p class="recipe-steps"># of steps: {card.instructions.length}</p>
             </div> -->
-        {/each}
-    </div>
+    {/each}
+  </div>
+<footer>
+  <img src={footerPic} alt="picture of pumpkins" class="footer-picture">
+</footer>
+
 </main>
