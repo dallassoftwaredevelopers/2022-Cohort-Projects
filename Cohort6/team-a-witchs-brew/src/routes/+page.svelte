@@ -4,6 +4,8 @@
   import holidayMenu from "../static/holiday menu picture.jpeg";
   import warmPies from "../static/pumpkin pie.jpeg";
   import picFrame from "../static/frame.png";
+
+  import jacobPic from "../static/Jacob.jpg"
 </script>
 
 
@@ -47,11 +49,11 @@
     </div>
   </div>
 
-  <div class="footer w-full h-[800px]">
+  <!-- <div class="footer w-full h-[800px]">
     <h2 class="team">Meet the team</h2>
     <div class="team-pictures">
       <div class="frames flex justify-around items-center">
-        <div class="">
+        <div class="image-container">
           <img
             class="w-[300px] h-[400px] frame"
             src={picFrame}
@@ -76,7 +78,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <slot />
 
