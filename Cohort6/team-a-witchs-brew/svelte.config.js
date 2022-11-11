@@ -12,6 +12,9 @@ const config = {
 
 	kit: {
 		adapter: adapter()
+	},
+	files:{
+		assets:'./public'
 	}
 };
 
