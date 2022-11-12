@@ -1,0 +1,74 @@
+.card__container {
+  width: 300px;
+  height: 400px;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s ease all;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .recipe__image {
+    height: 100%;
+
+    img {
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+    }
+  }
+
+  .recipe__content {
+    padding: 1em;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    border-radius: 24px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: white;
+    width: 100%;
+
+    .recipe__rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .recipe__title {
+      padding-top: 1em;
+      text-transform: uppercase;
+      color: #4a4a4a;
+    }
+
+    .recipe__description {
+      font-size: 0.7rem;
+      color: gray;
+    }
+
+    .recipe__stats {
+      position: absolute;
+      right: 20px;
+      bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      &_likes {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      &_comments {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
+}

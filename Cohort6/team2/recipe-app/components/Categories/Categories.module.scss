@@ -1,0 +1,17 @@
+.categories__container {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 1em;
+  align-items: center;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 2em;
+  font-size: 1.5rem;
+}
